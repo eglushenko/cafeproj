@@ -1,4 +1,7 @@
 package ua.com.levelup.test.springmvc.model;
 
 public class Premissions {
+
+//Интерфейс?
+
 }
