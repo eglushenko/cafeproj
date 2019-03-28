@@ -17,4 +17,6 @@ public class Meal {
     private double ingrigientWeight;
     private double procentOfTax;
     private double cost;// Имеет ли смысл хранить сумму сгенерированую единожды из ингридиентов и наценки и пересчет по запросу
+    private double preparationTime;
+
 }
