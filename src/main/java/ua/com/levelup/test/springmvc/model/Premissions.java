@@ -9,10 +9,10 @@ public class Premissions {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String name;
-    private boolean createUser;
-    private boolean createMeal;
-    private boolean createPersonal;
-    private boolean createIngridient;
+    private boolean addUser;
+    private boolean addMeal;
+    private boolean addPersonal;
+    private boolean addIngridient;
     private boolean deleteUser;
     private boolean deleteMeal;
     private boolean deletePersonal;
