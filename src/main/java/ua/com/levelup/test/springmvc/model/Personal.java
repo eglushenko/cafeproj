@@ -102,4 +102,12 @@ public class Personal {
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
+
+    public List<Scan> getScans() {
+        return scans;
+    }
+
+    public void setScans(List<Scan> scans) {
+        this.scans = scans;
+    }
 }
