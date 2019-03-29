@@ -918,280 +918,564 @@
       <Charset>utf8mb4</Charset>
       <DefaultForCharset>0</DefaultForCharset>
     </collation>
-    <table id="231" parent="7" name="ingridient"/>
-    <table id="232" parent="7" name="meal"/>
-    <table id="233" parent="7" name="meal_ingridient"/>
-    <table id="234" parent="7" name="personal"/>
-    <table id="235" parent="7" name="personal_scan"/>
-    <table id="236" parent="7" name="scan"/>
-    <table id="237" parent="7" name="user"/>
-    <column id="238" parent="231" name="id">
+    <table id="231" parent="7" name="alergen"/>
+    <table id="232" parent="7" name="discount"/>
+    <table id="233" parent="7" name="ingridient"/>
+    <table id="234" parent="7" name="ingridient_alergen"/>
+    <table id="235" parent="7" name="meal"/>
+    <table id="236" parent="7" name="meal_ingridient"/>
+    <table id="237" parent="7" name="order_meal"/>
+    <table id="238" parent="7" name="peremissions"/>
+    <table id="239" parent="7" name="personal"/>
+    <table id="240" parent="7" name="personal_scan"/>
+    <table id="241" parent="7" name="role"/>
+    <table id="242" parent="7" name="role_peremissions"/>
+    <table id="243" parent="7" name="scan"/>
+    <table id="244" parent="7" name="unit"/>
+    <table id="245" parent="7" name="user"/>
+    <column id="246" parent="231" name="id">
       <Position>1</Position>
       <DataType>bigint(20)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="239" parent="231" name="cost">
+    <column id="247" parent="231" name="name">
       <Position>2</Position>
-      <DataType>double|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="240" parent="231" name="name">
-      <Position>3</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="241" parent="231" name="unit">
-      <Position>4</Position>
-      <DataType>varchar(255)|0s</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <key id="242" parent="231" name="PRIMARY">
+    <key id="248" parent="231" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="243" parent="232" name="id">
+    <column id="249" parent="232" name="id">
       <Position>1</Position>
       <DataType>bigint(20)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="244" parent="232" name="cost">
+    <column id="250" parent="232" name="clientFirstName">
+      <Position>2</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="251" parent="232" name="clientPatronim">
+      <Position>3</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="252" parent="232" name="clientPhoneNumber">
+      <Position>4</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="253" parent="232" name="clientSecondName">
+      <Position>5</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="254" parent="232" name="dateOfregister">
+      <Position>6</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="255" parent="232" name="enabled">
+      <Position>7</Position>
+      <DataType>bit(1)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="256" parent="232" name="endDate">
+      <Position>8</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="257" parent="232" name="numberOfDiscount">
+      <Position>9</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="258" parent="232" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="259" parent="233" name="id">
+      <Position>1</Position>
+      <DataType>bigint(20)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="260" parent="233" name="cost">
       <Position>2</Position>
       <DataType>double|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="245" parent="232" name="ingrigientWeight">
+    <column id="261" parent="233" name="name">
+      <Position>3</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="262" parent="233" name="unit">
+      <Position>4</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="263" parent="233" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="264" parent="234" name="ingridient_id">
+      <Position>1</Position>
+      <DataType>bigint(20)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="265" parent="234" name="alergen_id">
+      <Position>2</Position>
+      <DataType>bigint(20)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="266" parent="234" name="FK1q0hi4w26kgonnn52iawf7wni">
+      <ColNames>alergen_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="267" parent="234" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>ingridient_id
+alergen_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="268" parent="234" name="FKi74k0mj7phdw7s1uwj6wu6ak7">
+      <ColNames>ingridient_id</ColNames>
+      <RefSchemaName>users_test</RefSchemaName>
+      <RefTableName>ingridient</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="269" parent="234" name="FK1q0hi4w26kgonnn52iawf7wni">
+      <ColNames>alergen_id</ColNames>
+      <RefSchemaName>users_test</RefSchemaName>
+      <RefTableName>alergen</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="270" parent="235" name="id">
+      <Position>1</Position>
+      <DataType>bigint(20)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="271" parent="235" name="cost">
+      <Position>2</Position>
+      <DataType>double|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="272" parent="235" name="ingrigientWeight">
       <Position>3</Position>
       <DataType>double|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="246" parent="232" name="name">
+    <column id="273" parent="235" name="name">
       <Position>4</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="247" parent="232" name="procentOfTax">
+    <column id="274" parent="235" name="procentOfTax">
       <Position>5</Position>
       <DataType>double|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="248" parent="232" name="PRIMARY">
+    <column id="275" parent="235" name="preparationTime">
+      <Position>6</Position>
+      <DataType>double|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="276" parent="235" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="249" parent="233" name="Meal_id">
+    <column id="277" parent="236" name="Meal_id">
       <Position>1</Position>
       <DataType>bigint(20)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="250" parent="233" name="ingridient_id">
+    <column id="278" parent="236" name="ingridient_id">
       <Position>2</Position>
       <DataType>bigint(20)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="251" parent="233" name="ingridients_id">
+    <column id="279" parent="236" name="ingridients_id">
       <Position>3</Position>
       <DataType>bigint(20)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="252" parent="233" name="UK_h63tushs3miiwqn7ec26gwihk">
+    <index id="280" parent="236" name="UK_h63tushs3miiwqn7ec26gwihk">
       <ColNames>ingridient_id</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <index id="253" parent="233" name="UK_oprfqtb7bygjayvocfh38mwaf">
+    <index id="281" parent="236" name="UK_oprfqtb7bygjayvocfh38mwaf">
       <ColNames>ingridients_id</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <index id="254" parent="233" name="FKflacclc57g32ki8ikja2xlk29">
+    <index id="282" parent="236" name="FKflacclc57g32ki8ikja2xlk29">
       <ColNames>Meal_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="255" parent="233" name="UK_h63tushs3miiwqn7ec26gwihk">
+    <key id="283" parent="236" name="UK_h63tushs3miiwqn7ec26gwihk">
       <ColNames>ingridient_id</ColNames>
       <UnderlyingIndexName>UK_h63tushs3miiwqn7ec26gwihk</UnderlyingIndexName>
     </key>
-    <key id="256" parent="233" name="UK_oprfqtb7bygjayvocfh38mwaf">
+    <key id="284" parent="236" name="UK_oprfqtb7bygjayvocfh38mwaf">
       <ColNames>ingridients_id</ColNames>
       <UnderlyingIndexName>UK_oprfqtb7bygjayvocfh38mwaf</UnderlyingIndexName>
     </key>
-    <foreign-key id="257" parent="233" name="FKflacclc57g32ki8ikja2xlk29">
+    <foreign-key id="285" parent="236" name="FKflacclc57g32ki8ikja2xlk29">
       <ColNames>Meal_id</ColNames>
       <RefSchemaName>users_test</RefSchemaName>
       <RefTableName>meal</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="258" parent="233" name="FKf4i9jfimgk4lx6visvv6840rr">
+    <foreign-key id="286" parent="236" name="FKf4i9jfimgk4lx6visvv6840rr">
       <ColNames>ingridient_id</ColNames>
       <RefSchemaName>users_test</RefSchemaName>
       <RefTableName>ingridient</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="259" parent="233" name="FKg4fmamcaimgwa1i5knikrmcjg">
+    <foreign-key id="287" parent="236" name="FKg4fmamcaimgwa1i5knikrmcjg">
       <ColNames>ingridients_id</ColNames>
       <RefSchemaName>users_test</RefSchemaName>
       <RefTableName>ingridient</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="260" parent="234" name="id_personal">
+    <column id="288" parent="237" name="Order_id">
+      <Position>1</Position>
+      <DataType>bigint(20)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="289" parent="237" name="meals_id">
+      <Position>2</Position>
+      <DataType>bigint(20)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="290" parent="237" name="UK_3mh7rr2h99nlssnjlgbigwv6i">
+      <ColNames>meals_id</ColNames>
+      <Unique>1</Unique>
+      <Type>btree</Type>
+    </index>
+    <key id="291" parent="237" name="UK_3mh7rr2h99nlssnjlgbigwv6i">
+      <ColNames>meals_id</ColNames>
+      <UnderlyingIndexName>UK_3mh7rr2h99nlssnjlgbigwv6i</UnderlyingIndexName>
+    </key>
+    <foreign-key id="292" parent="237" name="FK4hap2ktq4fp2nmdd6701d7jrx">
+      <ColNames>meals_id</ColNames>
+      <RefSchemaName>users_test</RefSchemaName>
+      <RefTableName>meal</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="293" parent="238" name="id">
       <Position>1</Position>
       <DataType>bigint(20)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="261" parent="234" name="address">
+    <column id="294" parent="238" name="createIngridient">
+      <Position>2</Position>
+      <DataType>bit(1)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="295" parent="238" name="createMeal">
+      <Position>3</Position>
+      <DataType>bit(1)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="296" parent="238" name="createPersonal">
+      <Position>4</Position>
+      <DataType>bit(1)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="297" parent="238" name="createUser">
+      <Position>5</Position>
+      <DataType>bit(1)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="298" parent="238" name="deleteIngridient">
+      <Position>6</Position>
+      <DataType>bit(1)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="299" parent="238" name="deleteMeal">
+      <Position>7</Position>
+      <DataType>bit(1)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="300" parent="238" name="deletePersonal">
+      <Position>8</Position>
+      <DataType>bit(1)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="301" parent="238" name="deleteUser">
+      <Position>9</Position>
+      <DataType>bit(1)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="302" parent="238" name="name">
+      <Position>10</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="303" parent="238" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="304" parent="239" name="id_personal">
+      <Position>1</Position>
+      <DataType>bigint(20)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="305" parent="239" name="address">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="262" parent="234" name="firstName">
+    <column id="306" parent="239" name="firstName">
       <Position>3</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="263" parent="234" name="lastName">
+    <column id="307" parent="239" name="lastName">
       <Position>4</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="264" parent="234" name="numberOfPassport">
+    <column id="308" parent="239" name="numberOfPassport">
       <Position>5</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="265" parent="234" name="patronymic">
+    <column id="309" parent="239" name="patronymic">
       <Position>6</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="266" parent="234" name="phoneNumber">
+    <column id="310" parent="239" name="phoneNumber">
       <Position>7</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="267" parent="234" name="serialOfPassport">
+    <column id="311" parent="239" name="serialOfPassport">
       <Position>8</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="268" parent="234" name="PRIMARY">
+    <key id="312" parent="239" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id_personal</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="269" parent="235" name="Personal_id_personal">
+    <column id="313" parent="240" name="Personal_id_personal">
       <Position>1</Position>
       <DataType>bigint(20)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="270" parent="235" name="scans_id">
+    <column id="314" parent="240" name="scans_id">
       <Position>2</Position>
       <DataType>bigint(20)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="271" parent="235" name="UK_qldxjtdl3d7k3a0uouat8updu">
+    <index id="315" parent="240" name="UK_qldxjtdl3d7k3a0uouat8updu">
       <ColNames>scans_id</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <index id="272" parent="235" name="FK5584nils266uls0gmhro188s1">
+    <index id="316" parent="240" name="FK5584nils266uls0gmhro188s1">
       <ColNames>Personal_id_personal</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="273" parent="235" name="UK_qldxjtdl3d7k3a0uouat8updu">
+    <key id="317" parent="240" name="UK_qldxjtdl3d7k3a0uouat8updu">
       <ColNames>scans_id</ColNames>
       <UnderlyingIndexName>UK_qldxjtdl3d7k3a0uouat8updu</UnderlyingIndexName>
     </key>
-    <foreign-key id="274" parent="235" name="FK5584nils266uls0gmhro188s1">
+    <foreign-key id="318" parent="240" name="FK5584nils266uls0gmhro188s1">
       <ColNames>Personal_id_personal</ColNames>
       <RefSchemaName>users_test</RefSchemaName>
       <RefTableName>personal</RefTableName>
       <RefColNames>id_personal</RefColNames>
     </foreign-key>
-    <foreign-key id="275" parent="235" name="FK99dm20dtd88udd58lp20ecmxu">
+    <foreign-key id="319" parent="240" name="FK99dm20dtd88udd58lp20ecmxu">
       <ColNames>scans_id</ColNames>
       <RefSchemaName>users_test</RefSchemaName>
       <RefTableName>scan</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="276" parent="236" name="id">
+    <column id="320" parent="241" name="id">
       <Position>1</Position>
       <DataType>bigint(20)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="277" parent="236" name="scan">
-      <Position>2</Position>
-      <DataType>tinyblob|0s</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <key id="278" parent="236" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>id</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <column id="279" parent="237" name="id">
-      <Position>1</Position>
-      <DataType>bigint(20)|0s</DataType>
-      <NotNull>1</NotNull>
-      <SequenceIdentity>1</SequenceIdentity>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="280" parent="237" name="address">
+    <column id="321" parent="241" name="name">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="281" parent="237" name="email">
+    <key id="322" parent="241" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="323" parent="242" name="Role_id">
+      <Position>1</Position>
+      <DataType>bigint(20)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="324" parent="242" name="premissions_id">
+      <Position>2</Position>
+      <DataType>bigint(20)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="325" parent="242" name="UK_ebne5mkswrbw7kvktt2loaigp">
+      <ColNames>premissions_id</ColNames>
+      <Unique>1</Unique>
+      <Type>btree</Type>
+    </index>
+    <index id="326" parent="242" name="FKjwp9b7nnq5p5iesqs8gxu3fuk">
+      <ColNames>Role_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="327" parent="242" name="UK_ebne5mkswrbw7kvktt2loaigp">
+      <ColNames>premissions_id</ColNames>
+      <UnderlyingIndexName>UK_ebne5mkswrbw7kvktt2loaigp</UnderlyingIndexName>
+    </key>
+    <foreign-key id="328" parent="242" name="FKjwp9b7nnq5p5iesqs8gxu3fuk">
+      <ColNames>Role_id</ColNames>
+      <RefSchemaName>users_test</RefSchemaName>
+      <RefTableName>role</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="329" parent="242" name="FK5ksisg7shwc012w0gcbcv2pyw">
+      <ColNames>premissions_id</ColNames>
+      <RefSchemaName>users_test</RefSchemaName>
+      <RefTableName>peremissions</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="330" parent="243" name="id">
+      <Position>1</Position>
+      <DataType>bigint(20)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="331" parent="243" name="scan">
+      <Position>2</Position>
+      <DataType>tinyblob|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="332" parent="243" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="333" parent="244" name="id">
+      <Position>1</Position>
+      <DataType>bigint(20)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="334" parent="244" name="unit_name">
+      <Position>2</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="335" parent="244" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="336" parent="245" name="id">
+      <Position>1</Position>
+      <DataType>bigint(20)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="337" parent="245" name="address">
+      <Position>2</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="338" parent="245" name="email">
       <Position>3</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="282" parent="237" name="firstname">
+    <column id="339" parent="245" name="firstname">
       <Position>4</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="283" parent="237" name="lastname">
+    <column id="340" parent="245" name="lastname">
       <Position>5</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="284" parent="237" name="login">
+    <column id="341" parent="245" name="login">
       <Position>6</Position>
       <DataType>varchar(30)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="285" parent="237" name="password">
+    <column id="342" parent="245" name="password">
       <Position>7</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="286" parent="237" name="phone">
+    <column id="343" parent="245" name="phone">
       <Position>8</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="287" parent="237" name="PRIMARY">
+    <key id="344" parent="245" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
