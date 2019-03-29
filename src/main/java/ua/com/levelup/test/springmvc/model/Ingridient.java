@@ -1,6 +1,8 @@
 package ua.com.levelup.test.springmvc.model;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "ingridient")
@@ -13,6 +15,8 @@ public class Ingridient {
     @JoinColumn(name = "id")
     private Unit unit;
     private double cost;
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<Alergen> alergens = new ArrayList<>();
 
     public long getId() {
         return id;
@@ -44,5 +48,13 @@ public class Ingridient {
 
     public void setCost(double cost) {
         this.cost = cost;
+    }
+
+    public List<Alergen> getAlergens() {
+        return alergens;
+    }
+
+    public void setAlergens(List<Alergen> alergens) {
+        this.alergens = alergens;
     }
 }
