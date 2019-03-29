@@ -18,7 +18,10 @@ public class Order {
     private String timeOfOrder;
     @OneToMany(cascade = CascadeType.ALL)
     private List<Meal> meals = new ArrayList<>();
-    private String oficiant;
+    private String status;  // enum
+    private String numberOfTable;  // номер столика
+    private String waiter; // имя фамилия Users кто оформляет заказ
+
 
 
 }

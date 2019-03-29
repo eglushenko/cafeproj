@@ -13,15 +13,17 @@ public class Discount {
     private long id;
     @NotNull
     private String numberOfDiscount;
+    private String discountType; // Enum процент или определеная сумма
     private String clientFirstName;
     private String clientSecondName;
     private String clientPatronim;
+    private double amountOfDiscount;
     @Phone
     @NotNull
     private String clientPhoneNumber;
     private boolean enabled;
     @NotNull
-    private String dateOfregister;
+    private String dateOfRegister;
     private String endDate;
 
     public long getId() {
@@ -81,11 +83,11 @@ public class Discount {
     }
 
     public String getDateOfregister() {
-        return dateOfregister;
+        return dateOfRegister;
     }
 
     public void setDateOfregister(String dateOfregister) {
-        this.dateOfregister = dateOfregister;
+        this.dateOfRegister = dateOfregister;
     }
 
     public String getEndDate() {
@@ -94,5 +96,21 @@ public class Discount {
 
     public void setEndDate(String endDate) {
         this.endDate = endDate;
+    }
+
+    public String getDiscountType() {
+        return discountType;
+    }
+
+    public void setDiscountType(String discountType) {
+        this.discountType = discountType;
+    }
+
+    public double getAmountOfDiscount() {
+        return amountOfDiscount;
+    }
+
+    public void setAmountOfDiscount(int amountOfDiscount) {
+        this.amountOfDiscount = amountOfDiscount;
     }
 }
