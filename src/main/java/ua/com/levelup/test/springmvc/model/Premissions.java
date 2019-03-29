@@ -8,6 +8,7 @@ public class Premissions {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+    private String name;
     private boolean createUser;
     private boolean createMeal;
     private boolean createPersonal;
