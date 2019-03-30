@@ -1,4 +1,4 @@
-package ua.com.levelup.test.springmvc;
+package ua.com.levelup.cafeproj;
 
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
@@ -17,7 +17,7 @@ import java.util.Locale;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages = "ua.com.levelup.test.springmvc.controllers")
+@ComponentScan(basePackages = "ua.com.levelup.cafeproj.controllers")
 public class WebConfig implements WebMvcConfigurer {
 
     public void addViewControllers(ViewControllerRegistry registry) {

@@ -1,4 +1,4 @@
-package ua.com.levelup.test.springmvc;
+package ua.com.levelup.cafeproj;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;

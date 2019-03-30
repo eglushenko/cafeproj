@@ -1,4 +1,4 @@
-package ua.com.levelup.test.springmvc;
+package ua.com.levelup.cafeproj;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

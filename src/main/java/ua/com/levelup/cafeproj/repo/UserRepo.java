@@ -1,8 +1,8 @@
-package ua.com.levelup.test.springmvc.repo;
+package ua.com.levelup.cafeproj.repo;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
-import ua.com.levelup.test.springmvc.model.User;
+import ua.com.levelup.cafeproj.model.User;
 
 /**
  * Все спринг-репозитори - это дженерики с двойным типом. Первый - тип Entity, второй - тип ID

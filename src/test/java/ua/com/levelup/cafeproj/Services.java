@@ -1,4 +1,4 @@
-package ua.com.levelup.test.springmvc;
+package ua.com.levelup.cafeproj;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

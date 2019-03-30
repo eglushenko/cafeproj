@@ -1,4 +1,4 @@
-package ua.com.levelup.test.springmvc;
+package ua.com.levelup.cafeproj;
 
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -14,11 +14,10 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
-import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
-import ua.com.levelup.test.springmvc.model.User;
+import ua.com.levelup.cafeproj.model.User;
 
 import javax.servlet.ServletContext;
 
@@ -59,7 +58,7 @@ public class UserControllerTest {
     public void createUserAPI() throws Exception
     {
         mockMvc.perform( post("/users")
-                .content(asJsonString(new User("mylogin", "xxx", "firstName4", "lastName4", "email4@mail.com",null,"82348653123")))
+                .content(asJsonString(new User("mylogin", "xxx", "firstName4", "lastName4", "email4@mail.com",null)))
                 .contentType(MediaType.APPLICATION_JSON)
                 .accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isCreated());

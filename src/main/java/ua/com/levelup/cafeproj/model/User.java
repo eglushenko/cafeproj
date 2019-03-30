@@ -1,7 +1,4 @@
-package ua.com.levelup.test.springmvc.model;
-
-
-import ua.com.levelup.test.springmvc.validation.Phone;
+package ua.com.levelup.cafeproj.model;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
@@ -28,19 +25,15 @@ public class User {
     private String email;
     private String address;
 
-    @Phone
-    private String phone;
-
     public User(){}
 
-    public User(String login, String password, String firstname, String lastname,String email,String address,String phone){
+    public User(String login, String password, String firstname, String lastname,String email,String address){
         this.login = login;
         this.password = password;
         this.firstname = firstname;
         this.lastname = lastname;
         this.email = email;
         this.address = address;
-        this.phone = phone;
     }
 
     public String getLogin() {
@@ -91,14 +84,6 @@ public class User {
         this.address = address;
     }
 
-    public String getPhone() {
-        return phone;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
-
     public long getId() {
         return id;
     }
@@ -117,7 +102,6 @@ public class User {
                 ", lastname='" + lastname + '\'' +
                 ", email='" + email + '\'' +
                 ", address='" + address + '\'' +
-                ", phone='" + phone + '\'' +
                 '}';
     }
 }

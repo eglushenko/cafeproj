@@ -1,4 +1,4 @@
-package ua.com.levelup.test.springmvc.controllers;
+package ua.com.levelup.cafeproj.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import ua.com.levelup.test.springmvc.model.User;
+import ua.com.levelup.cafeproj.model.User;
 
 import javax.validation.Valid;
 import java.util.Locale;
@@ -35,7 +35,7 @@ public class AuthController {
         }
         model.addAttribute("generalInfo",
                 messageSource.getMessage("info.general", new String[]{user.getLogin(),user.getFirstname(),user.getLastname()},new Locale("uk", "UA")));
-        model.addAttribute("contactInfo", user.getAddress()+", "+user.getEmail()+", "+user.getPhone());
+        model.addAttribute("contactInfo", user.getAddress()+", "+user.getEmail());
         return "userview";
     }
 

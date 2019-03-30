@@ -1,4 +1,4 @@
-package ua.com.levelup.test.springmvc;
+package ua.com.levelup.cafeproj;
 
 import com.google.common.collect.Lists;
 import org.springframework.context.annotation.Bean;

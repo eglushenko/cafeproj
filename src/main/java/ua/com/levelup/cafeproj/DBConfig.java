@@ -1,4 +1,4 @@
-package ua.com.levelup.test.springmvc;
+package ua.com.levelup.cafeproj;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -17,7 +17,7 @@ import javax.sql.DataSource;
 import java.util.Properties;
 
 @Configuration
-@EnableJpaRepositories(basePackages = {"ua.com.levelup.test.springmvc.repo"})
+@EnableJpaRepositories(basePackages = {"ua.com.levelup.cafeproj.repo"})
 @EnableTransactionManagement
 public class DBConfig {
 
@@ -25,9 +25,9 @@ public class DBConfig {
     public DataSource dataSource(){
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("com.mysql.jdbc.Driver");
-        dataSource.setUrl("jdbc:mysql://localhost:3306/users_test?createDatabaseIfNotExist=true");
+        dataSource.setUrl("jdbc:mysql://localhost:3306/cafe?createDatabaseIfNotExist=true");
         dataSource.setUsername( "root" );
-        dataSource.setPassword( "qwerty" );
+        dataSource.setPassword( "admin" );
         return dataSource;
     }
 
@@ -36,7 +36,7 @@ public class DBConfig {
         LocalContainerEntityManagerFactoryBean em
                 = new LocalContainerEntityManagerFactoryBean();
         em.setDataSource(dataSource());
-        em.setPackagesToScan("ua.com.levelup.test.springmvc.model");
+        em.setPackagesToScan("ua.com.levelup.cafeproj.model");
 
         JpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
         em.setJpaVendorAdapter(vendorAdapter);

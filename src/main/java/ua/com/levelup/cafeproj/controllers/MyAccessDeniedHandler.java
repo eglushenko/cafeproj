@@ -1,4 +1,4 @@
-package ua.com.levelup.test.springmvc.controllers;
+package ua.com.levelup.cafeproj.controllers;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

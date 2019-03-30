@@ -1,11 +1,11 @@
-package ua.com.levelup.test.springmvc.controllers;
+package ua.com.levelup.cafeproj.controllers;
 
 import io.swagger.annotations.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-import ua.com.levelup.test.springmvc.model.User;
-import ua.com.levelup.test.springmvc.repo.UserRepo;
+import ua.com.levelup.cafeproj.model.User;
+import ua.com.levelup.cafeproj.repo.UserRepo;
 
 import java.util.List;
 
