@@ -8,6 +8,12 @@ public class Scan {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+
+    /**
+     * TODO
+     * Еще нужна анотация @Lob
+     * Поле лучше не называть одноименно с сущностью. Лучше назвать его body или doc
+     */
     private byte[] scan;
 
     public Scan(byte[] scan) {

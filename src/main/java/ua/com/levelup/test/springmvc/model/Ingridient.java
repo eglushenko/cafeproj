@@ -12,10 +12,21 @@ public class Ingridient {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String name;
+    /**
+     * TODO
+     * Целесообразно уточнить от цего отталкивается цена
+     * costPerKgL
+     */
+    private double cost;
+
     @OneToOne(fetch = FetchType.LAZY)
+    /**
+     * TODO
+     * в  @JoinColumn указывается имя столбца в текущей таблице (Ингридиент),
+     * т.е. это не может быть поле с первичным ключом (id), это отдельное поле (unit_id или т.п.)
+     */
     @JoinColumn(name = "id")
     private Unit unit;
-    private double cost;
     @ManyToMany
     @JoinTable(name = "ingridient_alergen",
             joinColumns = @JoinColumn(name = "ingridient_id"),

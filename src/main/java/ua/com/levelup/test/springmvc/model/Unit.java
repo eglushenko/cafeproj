@@ -4,6 +4,10 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "unit")
+/**
+ * TODO
+ * Не вижу целесообразности в этой таблице. Вес ингридиентов всегда указывается с г и мл
+ */
 public class Unit {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -12,12 +12,40 @@ public class Meal {
     private long id;
 
     private String name;
+    /**
+     * TODO
+     * Не стоит игнорировать использование @JoinColumn
+     */
     @OneToMany(cascade = CascadeType.ALL)
     private List<Ingridient> ingridients = new ArrayList<Ingridient>();
+    /**
+     * TODO
+     * Думаю достаточно инта
+     */
     private double ingrigientTotalWeight;
+    /**
+     * TODO
+     * Не думаю что это поле целесообразно
+     * Рекомендованных процент навара имеет смысл держать единый в программе,
+     * а уже интерфейс будет рекомендовать не ниже какой стоимости ставить
+     */
     private double procentOfTax;
+
+    /**
+     * TODO
+     * Сумму вводит ресторан. Как минимум потому что это должно быть круглое число
+     */
     private double cost;// Имеет ли смысл хранить сумму сгенерированую единожды из ингридиентов и наценки и пересчет по запросу
+    /**
+     * TODO
+     * Думаю достаточно инта
+     */
     private double preparationTime;
+    /**
+     * TODO
+     * Исправить опечатки
+     * Это поле должно быть в сущности OrderMeal
+     */
     private String ststusOfMeal; // Статус блюда Enum ( новое, готовится, готовое, выдано )
 
     public long getId() {

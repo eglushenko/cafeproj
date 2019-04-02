@@ -11,6 +11,10 @@ public class Role {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String name;
+    /**
+     * TODO
+     * Одно и то же разрешение могут иметь разные роли...
+     */
     @OneToMany(cascade = CascadeType.ALL)
     private List<Premissions> premissions = new ArrayList<>();
 

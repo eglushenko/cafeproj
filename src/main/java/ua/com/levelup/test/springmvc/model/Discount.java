@@ -15,6 +15,10 @@ public class Discount {
     private String numberOfDiscount;
     private String discountType; // Enum процент или определеная сумма
     private String clientFirstName;
+    /**
+     * TODO
+     * Фамилия - это surname или lastname
+     */
     private String clientSecondName;
     private String clientPatronim;
     private double amountOfDiscount;
@@ -23,6 +27,10 @@ public class Discount {
     private String clientPhoneNumber;
     private boolean enabled;
     @NotNull
+    /**
+     * TODO
+     * Переделать типы даты в соответствии с правилами Java 8
+     */
     private String dateOfRegister;
     private String endDate;
 

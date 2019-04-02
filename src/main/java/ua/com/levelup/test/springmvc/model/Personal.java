@@ -17,6 +17,10 @@ public class Personal {
     private String firstName;
     private String lastName;
     private String patronymic;
+    /**
+     * TODO
+     * Зачем разделять серию и номер паспорта в базе?
+     */
     private String serialOfPassport;
     private String numberOfPassport;
     @NotNull
@@ -24,8 +28,19 @@ public class Personal {
     @Phone
     @NotNull
     private String phoneNumber;
+
+    /**
+     * TODO
+     * Не стоит игнорировать использование @JoinColumn
+     */
     @OneToMany(cascade = CascadeType.ALL)
     private List<Scan> scans = new ArrayList<Scan>();
+
+    /**
+     * TODO
+     * Где связка с юзером??
+     */
+
     public Personal(){}
 
     public Personal(String firstName, String lastName, String patronymic, String serialOfPassport, String numberOfPassport, String address, String phoneNumber) {
