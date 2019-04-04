@@ -1,6 +1,7 @@
 package ua.com.levelup.test.springmvc.model;
 
 import javax.persistence.*;
+import javax.persistence.Table;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
@@ -19,14 +20,8 @@ public class Ingridient {
      */
     private double cost;
 
-    @OneToOne(fetch = FetchType.LAZY)
-    /**
-     * TODO
-     * в  @JoinColumn указывается имя столбца в текущей таблице (Ингридиент),
-     * т.е. это не может быть поле с первичным ключом (id), это отдельное поле (unit_id или т.п.)
-     */
-    @JoinColumn(name = "id")
-    private Unit unit;
+
+    private String unit;//enum
     @ManyToMany
     @JoinTable(name = "ingridient_alergen",
             joinColumns = @JoinColumn(name = "ingridient_id"),
@@ -49,11 +44,11 @@ public class Ingridient {
         this.name = name;
     }
 
-    public Unit getUnit() {
+    public String getUnit() {
         return unit;
     }
 
-    public void setUnit(Unit unit) {
+    public void setUnit(String unit) {
         this.unit = unit;
     }
 

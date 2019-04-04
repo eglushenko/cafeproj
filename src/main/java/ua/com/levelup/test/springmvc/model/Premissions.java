@@ -1,6 +1,7 @@
 package ua.com.levelup.test.springmvc.model;
 
 import javax.persistence.*;
+import javax.persistence.Table;
 
 @Entity
 @Table(name = "peremissions")

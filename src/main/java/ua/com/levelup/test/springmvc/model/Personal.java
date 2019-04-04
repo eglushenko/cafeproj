@@ -3,6 +3,7 @@ package ua.com.levelup.test.springmvc.model;
 import ua.com.levelup.test.springmvc.validation.Phone;
 
 import javax.persistence.*;
+import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
@@ -34,7 +35,7 @@ public class Personal {
      * Не стоит игнорировать использование @JoinColumn
      */
     @OneToMany(cascade = CascadeType.ALL)
-    private List<Scan> scans = new ArrayList<Scan>();
+    private List<Doc> docs = new ArrayList<Doc>();
 
     /**
      * TODO
@@ -118,11 +119,11 @@ public class Personal {
         this.phoneNumber = phoneNumber;
     }
 
-    public List<Scan> getScans() {
-        return scans;
+    public List<Doc> getDocs() {
+        return docs;
     }
 
-    public void setScans(List<Scan> scans) {
-        this.scans = scans;
+    public void setDocs(List<Doc> docs) {
+        this.docs = docs;
     }
 }

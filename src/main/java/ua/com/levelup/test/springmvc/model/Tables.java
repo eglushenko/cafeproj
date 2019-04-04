@@ -2,13 +2,15 @@ package ua.com.levelup.test.springmvc.model;
 
 import javax.persistence.*;
 
+import javax.persistence.Table;
+
 @Entity
 @Table(name = "table")
 /**
  * TODO
  * За опечатки бьют...
  */
-public class Teble {
+public class Tables {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -18,12 +20,12 @@ public class Teble {
      * опечатка
      * И вообще лучше его назвать что-то вроде maxGuests
      */
-    private int numsOfseets;  // количество мест за столико максимально
+    private int maxGuests;  // количество мест за столико максимально
     /**
      * TODO
      * is будет в геттере, поэтому булеан поля лучше называть без is
      */
-    private boolean isReserved;
+    private boolean reserved;
 
     /**
      * TODO

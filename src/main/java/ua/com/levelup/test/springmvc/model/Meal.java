@@ -1,6 +1,7 @@
 package ua.com.levelup.test.springmvc.model;
 
 import javax.persistence.*;
+import javax.persistence.Table;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,41 +13,35 @@ public class Meal {
     private long id;
 
     private String name;
-    /**
-     * TODO
-     * Не стоит игнорировать использование @JoinColumn
-     */
+
     @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name ="ingridient_id")
     private List<Ingridient> ingridients = new ArrayList<Ingridient>();
-    /**
-     * TODO
-     * Думаю достаточно инта
-     */
+
     private double ingrigientTotalWeight;
     /**
      * TODO
      * Не думаю что это поле целесообразно
      * Рекомендованных процент навара имеет смысл держать единый в программе,
      * а уже интерфейс будет рекомендовать не ниже какой стоимости ставить
+     *
+     * Возможно использовать другой процент наценки на блюдо if null get standartTax.
      */
-    private double procentOfTax;
+    private int procentOfTax;
 
     /**
      * TODO
      * Сумму вводит ресторан. Как минимум потому что это должно быть круглое число
      */
     private double cost;// Имеет ли смысл хранить сумму сгенерированую единожды из ингридиентов и наценки и пересчет по запросу
-    /**
-     * TODO
-     * Думаю достаточно инта
-     */
-    private double preparationTime;
+
+    private int preparationTime;
     /**
      * TODO
      * Исправить опечатки
      * Это поле должно быть в сущности OrderMeal
      */
-    private String ststusOfMeal; // Статус блюда Enum ( новое, готовится, готовое, выдано )
+    private String stastusOfMeal; // Статус блюда Enum ( новое, готовится, готовое, выдано )
 
     public long getId() {
         return id;
@@ -84,7 +79,7 @@ public class Meal {
         return procentOfTax;
     }
 
-    public void setProcentOfTax(double procentOfTax) {
+    public void setProcentOfTax(int procentOfTax) {
         this.procentOfTax = procentOfTax;
     }
 
@@ -100,7 +95,7 @@ public class Meal {
         return preparationTime;
     }
 
-    public void setPreparationTime(double preparationTime) {
+    public void setPreparationTime(int preparationTime) {
         this.preparationTime = preparationTime;
     }
 
@@ -113,10 +108,10 @@ public class Meal {
     }
 
     public String getStstusOfMeal() {
-        return ststusOfMeal;
+        return stastusOfMeal;
     }
 
     public void setStstusOfMeal(String ststusOfMeal) {
-        this.ststusOfMeal = ststusOfMeal;
+        this.stastusOfMeal = ststusOfMeal;
     }
 }

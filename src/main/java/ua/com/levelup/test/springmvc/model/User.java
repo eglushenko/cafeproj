@@ -4,6 +4,7 @@ package ua.com.levelup.test.springmvc.model;
 import ua.com.levelup.test.springmvc.validation.Phone;
 
 import javax.persistence.*;
+import javax.persistence.Table;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;

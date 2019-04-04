@@ -1,22 +1,20 @@
 package ua.com.levelup.test.springmvc.model;
 
 import javax.persistence.*;
+import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
+import java.time.LocalDate;
 
 @Entity
-@Table (name = "cash_operations")
+@Table(name = "cash_operations")
 public class CashDesk {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     @NotNull
     private String typeOfDocument; // Enum
-    /**
-     * TODO
-     * Два автосгенерированных поля в одной таблице не имеют смысла
-     */
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private String numberOfDocument;
+
+
     /**
      * TODO
      * Переделать типы дат и времени в соответствии с правилами Java 8
@@ -24,8 +22,8 @@ public class CashDesk {
      * не вижу смысла держать для этого 2 разных поля
      * Имеет смысл сделать это поле автозаполняемым (почитайте, как делаются поля по типу created и last_update)
      */
-    private String Date;
-    private String time;
+    private String dateOfDocument;
+    private String timeOfDocument;
     private String destantionDocument; // номер заказа если выбрана оплата в типе документа
     private double sum;
     /**
