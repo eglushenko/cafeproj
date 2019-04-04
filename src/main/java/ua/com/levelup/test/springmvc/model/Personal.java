@@ -22,7 +22,6 @@ public class Personal {
      * TODO
      * Зачем разделять серию и номер паспорта в базе?
      */
-    private String serialOfPassport;
     private String numberOfPassport;
     @NotNull
     private String address;
@@ -35,20 +34,22 @@ public class Personal {
      * Не стоит игнорировать использование @JoinColumn
      */
     @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "doc_id")
     private List<Doc> docs = new ArrayList<Doc>();
 
     /**
      * TODO
      * Где связка с юзером??
      */
-
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "user_id")
+    private User user;
     public Personal(){}
 
-    public Personal(String firstName, String lastName, String patronymic, String serialOfPassport, String numberOfPassport, String address, String phoneNumber) {
+    public Personal(String firstName, String lastName, String patronymic, String numberOfPassport, String address, String phoneNumber) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.patronymic = patronymic;
-        this.serialOfPassport = serialOfPassport;
         this.numberOfPassport = numberOfPassport;
         this.address = address;
         this.phoneNumber = phoneNumber;
@@ -87,14 +88,6 @@ public class Personal {
         this.patronymic = patronymic;
     }
 
-    public String getSerialOfPassport() {
-        return serialOfPassport;
-    }
-
-    public void setSerialOfPassport(String serialOfPassport) {
-        this.serialOfPassport = serialOfPassport;
-    }
-
     public String getNumberOfPassport() {
         return numberOfPassport;
     }
@@ -125,5 +118,13 @@ public class Personal {
 
     public void setDocs(List<Doc> docs) {
         this.docs = docs;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }

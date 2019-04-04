@@ -37,7 +37,7 @@ public class Order {
     private String statusOfOrder;  // enum (open,close)
 
     private int numberOfTable;  // номер столика
-    @OneToOne
+    @OneToOne(optional = false, cascade = CascadeType.ALL)
     @JoinColumn(name = "personal_id")
     private Personal personal;// имя фамилия Users кто оформляет заказ
 
@@ -92,4 +92,5 @@ public class Order {
     public void setPersonal(Personal personal) {
         this.personal = personal;
     }
+
 }

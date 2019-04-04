@@ -1,10 +1,14 @@
 package ua.com.levelup.test.springmvc.model;
 
+import org.hibernate.annotations.CreationTimestamp;
 import ua.com.levelup.test.springmvc.validation.Phone;
 
 import javax.persistence.*;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.Date;
 
 @Entity
 @Table(name = "discount")
@@ -20,7 +24,7 @@ public class Discount {
      * TODO
      * Фамилия - это surname или lastname
      */
-    private String clientSecondName;
+    private String clientLastName;
     private String clientPatronim;
     private double amountOfDiscount;
     @Phone
@@ -32,8 +36,11 @@ public class Discount {
      * TODO
      * Переделать типы даты в соответствии с правилами Java 8
      */
-    private String dateOfRegister;
-    private String endDate;
+    @Column
+    @CreationTimestamp
+    private LocalDate dateOfRegister;
+    @Column
+    private LocalDate endDate;
 
     public long getId() {
         return id;
@@ -59,13 +66,7 @@ public class Discount {
         this.clientFirstName = clientFirstName;
     }
 
-    public String getClientSecondName() {
-        return clientSecondName;
-    }
 
-    public void setClientSecondName(String clientSecondName) {
-        this.clientSecondName = clientSecondName;
-    }
 
     public String getClientPatronim() {
         return clientPatronim;
@@ -91,21 +92,7 @@ public class Discount {
         this.enabled = enabled;
     }
 
-    public String getDateOfregister() {
-        return dateOfRegister;
-    }
 
-    public void setDateOfregister(String dateOfregister) {
-        this.dateOfRegister = dateOfregister;
-    }
-
-    public String getEndDate() {
-        return endDate;
-    }
-
-    public void setEndDate(String endDate) {
-        this.endDate = endDate;
-    }
 
     public String getDiscountType() {
         return discountType;
@@ -121,5 +108,33 @@ public class Discount {
 
     public void setAmountOfDiscount(int amountOfDiscount) {
         this.amountOfDiscount = amountOfDiscount;
+    }
+
+    public String getClientLastName() {
+        return clientLastName;
+    }
+
+    public void setClientLastName(String clientLastName) {
+        this.clientLastName = clientLastName;
+    }
+
+    public void setAmountOfDiscount(double amountOfDiscount) {
+        this.amountOfDiscount = amountOfDiscount;
+    }
+
+    public LocalDate getDateOfRegister() {
+        return dateOfRegister;
+    }
+
+    public void setDateOfRegister(LocalDate dateOfRegister) {
+        this.dateOfRegister = dateOfRegister;
+    }
+
+    public LocalDate getEndDate() {
+        return endDate;
+    }
+
+    public void setEndDate(LocalDate endDate) {
+        this.endDate = endDate;
     }
 }

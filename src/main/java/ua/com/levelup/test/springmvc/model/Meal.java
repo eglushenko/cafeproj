@@ -41,7 +41,6 @@ public class Meal {
      * Исправить опечатки
      * Это поле должно быть в сущности OrderMeal
      */
-    private String stastusOfMeal; // Статус блюда Enum ( новое, готовится, готовое, выдано )
 
     public long getId() {
         return id;
@@ -107,11 +106,4 @@ public class Meal {
         this.ingrigientTotalWeight = ingrigientTotalWeight;
     }
 
-    public String getStstusOfMeal() {
-        return stastusOfMeal;
-    }
-
-    public void setStstusOfMeal(String ststusOfMeal) {
-        this.stastusOfMeal = ststusOfMeal;
-    }
 }

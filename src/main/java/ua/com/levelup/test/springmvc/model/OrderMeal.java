@@ -56,4 +56,5 @@ public class OrderMeal {
     public void setStatusOfMeal(String statusOfMeal) {
         this.statusOfMeal = statusOfMeal;
     }
+
 }

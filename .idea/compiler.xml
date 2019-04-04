@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="mvc-cafeprojevg" />
         <module name="spring-mvc-test" />
+        <module name="springmvcexp" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

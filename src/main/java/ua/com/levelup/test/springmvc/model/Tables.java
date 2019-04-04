@@ -31,10 +31,13 @@ public class Tables {
      * TODO
      * Почему это стринг, а не связка с персоналом?
      */
+    @OneToOne
+
     private String fixedWaiter; // официант может быть закрепленн за столиком
 
     /**
      * TODO
      * где геттеры и сеттеры?
      */
+
 }
