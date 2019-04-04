@@ -32,12 +32,50 @@ public class Tables {
      * Почему это стринг, а не связка с персоналом?
      */
     @OneToOne
-
-    private String fixedWaiter; // официант может быть закрепленн за столиком
+    @JoinColumn(name = "personal_id")
+    private Personal personal; // официант может быть закрепленн за столиком
 
     /**
      * TODO
      * где геттеры и сеттеры?
      */
+    public int getId() {
+        return id;
+    }
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getMaxGuests() {
+        return maxGuests;
+    }
+
+    public void setMaxGuests(int maxGuests) {
+        this.maxGuests = maxGuests;
+    }
+
+    public boolean isReserved() {
+        return reserved;
+    }
+
+    public void setReserved(boolean reserved) {
+        this.reserved = reserved;
+    }
+
+    public Personal getPersonal() {
+        return personal;
+    }
+
+    public void setPersonal(Personal personal) {
+        this.personal = personal;
+    }
 }
