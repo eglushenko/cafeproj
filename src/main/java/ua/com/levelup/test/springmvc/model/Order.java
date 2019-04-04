@@ -4,6 +4,7 @@ import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
 import javax.persistence.Table;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,8 +21,10 @@ public class Order {
      * не вижу смысла держать для этого 2 разных поля
      * Имеет смысл сделать это поле автозаполняемым (почитайте, как делаются поля по типу created и last_update)
      */
+    @Column
+    @CreationTimestamp
+    private LocalDateTime createDateTime;
 
-    private String dateAndDateOfOrder;
 
     /**
      * TODO
@@ -50,12 +53,12 @@ public class Order {
         this.id = id;
     }
 
-    public String getDateAndDateOfOrder() {
-        return dateAndDateOfOrder;
+    public LocalDateTime getCreateDateTime() {
+        return createDateTime;
     }
 
-    public void setDateAndDateOfOrder(String dateAndDateOfOrder) {
-        this.dateAndDateOfOrder = dateAndDateOfOrder;
+    public void setCreateDateTime(LocalDateTime createDateTime) {
+        this.createDateTime = createDateTime;
     }
 
     public List<Meal> getMeals() {
