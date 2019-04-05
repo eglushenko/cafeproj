@@ -18,10 +18,7 @@ public class Personal {
     private String firstName;
     private String lastName;
     private String patronymic;
-    /**
-     * TODO
-     * Зачем разделять серию и номер паспорта в базе?
-     */
+
     private String numberOfPassport;
     @NotNull
     private String address;

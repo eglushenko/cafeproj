@@ -13,6 +13,7 @@ public class Premissions {
 
     /**
      * Все эти поля - это не столбцы, а записи в таблице
+     * TODO Непонятно.
      */
    /* private boolean addUser;
     private boolean addMeal;

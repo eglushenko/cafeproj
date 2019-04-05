@@ -20,10 +20,7 @@ public class Discount {
     private String numberOfDiscount;
     private String discountType; // Enum процент или определеная сумма
     private String clientFirstName;
-    /**
-     * TODO
-     * Фамилия - это surname или lastname
-     */
+
     private String clientLastName;
     private String clientPatronim;
     private double amountOfDiscount;
@@ -38,9 +35,9 @@ public class Discount {
      */
     @Column
     @CreationTimestamp
-    private LocalDate dateOfRegister;
+    private LocalDate dateOfRegister = LocalDate.now();
     @Column
-    private LocalDate endDate;
+    private Date endDate;
 
     public long getId() {
         return id;
@@ -67,7 +64,6 @@ public class Discount {
     }
 
 
-
     public String getClientPatronim() {
         return clientPatronim;
     }
@@ -91,7 +87,6 @@ public class Discount {
     public void setEnabled(boolean enabled) {
         this.enabled = enabled;
     }
-
 
 
     public String getDiscountType() {
@@ -130,11 +125,11 @@ public class Discount {
         this.dateOfRegister = dateOfRegister;
     }
 
-    public LocalDate getEndDate() {
+    public Date getEndDate() {
         return endDate;
     }
 
-    public void setEndDate(LocalDate endDate) {
+    public void setEndDate(Date endDate) {
         this.endDate = endDate;
     }
 }

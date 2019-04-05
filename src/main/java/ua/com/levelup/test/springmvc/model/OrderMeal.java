@@ -15,6 +15,7 @@ public class OrderMeal {
     @JoinColumn (name="meal_id")
     private Meal meal;
     private int quantity;
+
     private String statusOfMeal; // TODO Enum
 
     public long getId() {

@@ -6,25 +6,15 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "table")
-/**
- * TODO
- * За опечатки бьют...
- */
+
 public class Tables {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name; // номер столика или его название
-    /**
-     * TODO
-     * опечатка
-     * И вообще лучше его назвать что-то вроде maxGuests
-     */
+
     private int maxGuests;  // количество мест за столико максимально
-    /**
-     * TODO
-     * is будет в геттере, поэтому булеан поля лучше называть без is
-     */
+
     private boolean reserved;
 
     /**
@@ -35,10 +25,7 @@ public class Tables {
     @JoinColumn(name = "personal_id")
     private Personal personal; // официант может быть закрепленн за столиком
 
-    /**
-     * TODO
-     * где геттеры и сеттеры?
-     */
+
     public int getId() {
         return id;
     }

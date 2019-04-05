@@ -23,8 +23,7 @@ public class Order {
      */
     @Column
     @CreationTimestamp
-    private LocalDateTime createDateTime;
-
+    private LocalDateTime createDateTime = LocalDateTime.now();
 
     /**
      * TODO
@@ -37,7 +36,7 @@ public class Order {
     private String statusOfOrder;  // enum (open,close)
 
     private int numberOfTable;  // номер столика
-    @OneToOne(optional = false, cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "personal_id")
     private Personal personal;// имя фамилия Users кто оформляет заказ
 

@@ -27,7 +27,7 @@ public class CashDesk {
      */
     @Column
     @CreationTimestamp
-    private LocalDateTime dateTimeCreation;
+    private LocalDateTime dateTimeCreation = LocalDateTime.now();
     private String destantionDocument; // номер заказа если выбрана оплата в типе документа
     private double sum;
     /**
@@ -39,10 +39,7 @@ public class CashDesk {
     private Personal personal;
     private String userOfDestantion; // если служебная выдача или внесение указать юзера
 
-    /**
-     * TODO
-     * где геттеры и сеттеры?
-     */
+
     public long getId() {
         return id;
     }
