@@ -17,6 +17,7 @@ public class Role {
      * Одно и то же разрешение могут иметь разные роли...
      */
     @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "id")
     private List<Premissions> premissions = new ArrayList<>();
 
     public long getId() {

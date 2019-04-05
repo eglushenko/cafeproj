@@ -15,7 +15,7 @@ public class Meal {
     private String name;
 
     @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name ="ingridient_id")
+    @JoinColumn(name ="id")
     private List<Ingridient> ingridients = new ArrayList<Ingridient>();
 
     private double ingrigientTotalWeight;

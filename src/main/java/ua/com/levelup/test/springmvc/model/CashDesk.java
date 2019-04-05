@@ -35,7 +35,7 @@ public class CashDesk {
      * Почему это стринг, а не связка с юзером? Точнее не с юзером, а с персоналом
      */
     @OneToOne
-    @JoinColumn(name = "personal_id")
+    @JoinColumn(name = "id")
     private Personal personal;
     private String userOfDestantion; // если служебная выдача или внесение указать юзера
 

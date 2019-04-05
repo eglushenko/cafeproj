@@ -22,7 +22,7 @@ public class Tables {
      * Почему это стринг, а не связка с персоналом?
      */
     @OneToOne
-    @JoinColumn(name = "personal_id")
+    @JoinColumn(name = "id")
     private Personal personal; // официант может быть закрепленн за столиком
 
 

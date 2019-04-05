@@ -13,7 +13,7 @@ import java.util.List;
 public class Personal {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id_personal;
+    private long id;
     @NotNull
     private String firstName;
     private String lastName;
@@ -31,7 +31,7 @@ public class Personal {
      * Не стоит игнорировать использование @JoinColumn
      */
     @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "doc_id")
+    @JoinColumn(name = "id")
     private List<Doc> docs = new ArrayList<Doc>();
 
     /**
@@ -39,7 +39,7 @@ public class Personal {
      * Где связка с юзером??
      */
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "user_id")
+    @JoinColumn(name = "id")
     private User user;
     public Personal(){}
 
@@ -53,12 +53,12 @@ public class Personal {
 
     }
 
-    public long getId_personal() {
-        return id_personal;
+    public long getId() {
+        return id;
     }
 
-    public void setId_personal(long id_personal) {
-        this.id_personal = id_personal;
+    public void setId(long id) {
+        this.id = id;
     }
 
     public String getFirstName() {

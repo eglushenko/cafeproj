@@ -9,10 +9,10 @@ public class OrderMeal {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     @OneToOne (cascade=CascadeType.ALL)
-    @JoinColumn (name="order_id")
+    @JoinColumn (name="id")
     private Order order;
     @OneToOne (cascade=CascadeType.ALL)
-    @JoinColumn (name="meal_id")
+    @JoinColumn (name="id")
     private Meal meal;
     private int quantity;
 

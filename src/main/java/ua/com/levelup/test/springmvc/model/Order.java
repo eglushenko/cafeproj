@@ -31,13 +31,13 @@ public class Order {
      * Напоминаю, про необходимость таблицы OrderMeal, где должно быть как минимум кол-во блюд
      */
     @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "meal_id")
+    @JoinColumn(name = "id")
     private List<Meal> meals = new ArrayList<>();
     private String statusOfOrder;  // enum (open,close)
 
     private int numberOfTable;  // номер столика
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "personal_id")
+    @JoinColumn(name = "id")
     private Personal personal;// имя фамилия Users кто оформляет заказ
 
     /**
