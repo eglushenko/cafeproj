@@ -1,6 +1,7 @@
 package ua.com.levelup.test.springmvc.model;
 
 import org.hibernate.annotations.CreationTimestamp;
+import ua.com.levelup.test.springmvc.enums.StatusOfOrderEnum;
 
 import javax.persistence.*;
 import javax.persistence.Table;
@@ -25,25 +26,18 @@ public class Order {
     @CreationTimestamp
     private LocalDateTime createDateTime = LocalDateTime.now();
 
-    /**
-     * TODO
-     * Не стоит игнорировать использование @JoinColumn
-     * Напоминаю, про необходимость таблицы OrderMeal, где должно быть как минимум кол-во блюд
-     */
+
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "id")
     private List<Meal> meals = new ArrayList<>();
-    private String statusOfOrder;  // enum (open,close)
+    @Enumerated(EnumType.STRING)
+    private StatusOfOrderEnum statusOfOrder;
 
     private int numberOfTable;  // номер столика
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "id")
     private Personal personal;// имя фамилия Users кто оформляет заказ
 
-    /**
-     * TODO
-     * где геттеры и сеттеры?
-     */
     public long getId() {
         return id;
     }
@@ -68,11 +62,11 @@ public class Order {
         this.meals = meals;
     }
 
-    public String getStatusOfOrder() {
+    public StatusOfOrderEnum getStatusOfOrder() {
         return statusOfOrder;
     }
 
-    public void setStatusOfOrder(String statusOfOrder) {
+    public void setStatusOfOrder(StatusOfOrderEnum statusOfOrder) {
         this.statusOfOrder = statusOfOrder;
     }
 

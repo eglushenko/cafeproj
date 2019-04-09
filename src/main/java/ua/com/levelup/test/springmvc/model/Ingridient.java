@@ -20,7 +20,7 @@ public class Ingridient {
      * Целесообразно уточнить от цего отталкивается цена
      * costPerKgL
      */
-    private double cost;
+    private double costPerUnit;
 
     @Enumerated(EnumType.STRING)
     private UnitsEnum unit;
@@ -54,12 +54,12 @@ public class Ingridient {
         this.unit = unit;
     }
 
-    public double getCost() {
-        return cost;
+    public double getCostPerUnit() {
+        return costPerUnit;
     }
 
-    public void setCost(double cost) {
-        this.cost = cost;
+    public void setCostPerUnit(double costPerUnit) {
+        this.costPerUnit = costPerUnit;
     }
 
     public Set<Alergen> getAlergens() {

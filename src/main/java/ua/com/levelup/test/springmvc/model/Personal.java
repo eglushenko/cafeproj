@@ -18,26 +18,15 @@ public class Personal {
     private String firstName;
     private String lastName;
     private String patronymic;
-
     private String numberOfPassport;
     @NotNull
     private String address;
     @Phone
     @NotNull
     private String phoneNumber;
-
-    /**
-     * TODO
-     * Не стоит игнорировать использование @JoinColumn
-     */
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "id")
     private List<Doc> docs = new ArrayList<Doc>();
-
-    /**
-     * TODO
-     * Где связка с юзером??
-     */
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "id")
     private User user;

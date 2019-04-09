@@ -1,6 +1,7 @@
 package ua.com.levelup.test.springmvc.model;
 
 import org.hibernate.annotations.CreationTimestamp;
+import ua.com.levelup.test.springmvc.enums.DiscountTypeEnum;
 import ua.com.levelup.test.springmvc.validation.Phone;
 
 import javax.persistence.*;
@@ -18,7 +19,8 @@ public class Discount {
     private long id;
     @NotNull
     private String numberOfDiscount;
-    private String discountType; // Enum процент или определеная сумма
+    @Enumerated(EnumType.STRING)
+    private DiscountTypeEnum discountType;
     private String clientFirstName;
 
     private String clientLastName;
@@ -29,10 +31,6 @@ public class Discount {
     private String clientPhoneNumber;
     private boolean enabled;
     @NotNull
-    /**
-     * TODO
-     * Переделать типы даты в соответствии с правилами Java 8
-     */
     @Column
     @CreationTimestamp
     private LocalDate dateOfRegister = LocalDate.now();
@@ -88,12 +86,11 @@ public class Discount {
         this.enabled = enabled;
     }
 
-
-    public String getDiscountType() {
+    public DiscountTypeEnum getDiscountType() {
         return discountType;
     }
 
-    public void setDiscountType(String discountType) {
+    public void setDiscountType(DiscountTypeEnum discountType) {
         this.discountType = discountType;
     }
 

@@ -15,12 +15,11 @@ public class Role {
     private long id;
     @Enumerated(EnumType.STRING)
     private RoleEnum name;
-    /**
-     * TODO
-     * Одно и то же разрешение могут иметь разные роли... many to many
-     */
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "id")
+    @ManyToMany
+    @JoinTable(name = "premissions_role",
+                joinColumns = @JoinColumn (name = "premissions_id"),
+            inverseJoinColumns = @JoinColumn (name = "role_id"))
+
     private List<Premissions> premissions = new ArrayList<>();
 
     public long getId() {
@@ -46,4 +45,6 @@ public class Role {
     public void setPremissions(List<Premissions> premissions) {
         this.premissions = premissions;
     }
+
+
 }

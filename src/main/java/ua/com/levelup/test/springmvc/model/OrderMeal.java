@@ -1,5 +1,7 @@
 package ua.com.levelup.test.springmvc.model;
 
+import ua.com.levelup.test.springmvc.enums.StatusOfMealEnum;
+
 import javax.persistence.*;
 
 @Entity
@@ -15,8 +17,8 @@ public class OrderMeal {
     @JoinColumn (name="id")
     private Meal meal;
     private int quantity;
-
-    private String statusOfMeal; // TODO Enum
+    @Enumerated(EnumType.STRING)
+    private StatusOfMealEnum statusOfMeal;
 
     public long getId() {
         return id;
@@ -50,12 +52,11 @@ public class OrderMeal {
         this.quantity = quantity;
     }
 
-    public String getStatusOfMeal() {
+    public StatusOfMealEnum getStatusOfMeal() {
         return statusOfMeal;
     }
 
-    public void setStatusOfMeal(String statusOfMeal) {
+    public void setStatusOfMeal(StatusOfMealEnum statusOfMeal) {
         this.statusOfMeal = statusOfMeal;
     }
-
 }

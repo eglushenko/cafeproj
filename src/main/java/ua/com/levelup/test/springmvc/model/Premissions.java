@@ -4,6 +4,7 @@ import ua.com.levelup.test.springmvc.enums.PremissionsEnum;
 
 import javax.persistence.*;
 import javax.persistence.Table;
+import java.util.List;
 
 @Entity
 @Table(name = "peremissions")
@@ -15,6 +16,12 @@ public class Premissions {
     private PremissionsEnum name;
     @Column(name = "enabled")
     private boolean enabled;
+    @ManyToMany
+    @JoinTable(name = "premissions_role",
+            joinColumns = @JoinColumn (name = "role_id"),
+            inverseJoinColumns = @JoinColumn (name = "premissions_id"))
+
+    private List<Role> roles;
 
     public long getId() {
         return id;
@@ -38,5 +45,13 @@ public class Premissions {
 
     public void setEnabled(boolean enabled) {
         this.enabled = enabled;
+    }
+
+    public List<Role> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(List<Role> roles) {
+        this.roles = roles;
     }
 }
