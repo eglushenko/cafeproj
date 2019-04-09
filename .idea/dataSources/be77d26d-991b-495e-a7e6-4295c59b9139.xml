@@ -925,7 +925,7 @@
     <table id="235" parent="7" name="global_settings"/>
     <table id="236" parent="7" name="ingridient"/>
     <table id="237" parent="7" name="ingridient_alergen"/>
-    <table id="238" parent="7" name="order_meal"/>
+    <table id="238" parent="7" name="order_dish"/>
     <table id="239" parent="7" name="peremissions"/>
     <table id="240" parent="7" name="personal"/>
     <table id="241" parent="7" name="premissions_role"/>
