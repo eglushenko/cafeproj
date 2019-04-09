@@ -29,7 +29,7 @@ public class Order {
 
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "id")
-    private List<Meal> meals = new ArrayList<>();
+    private List<Dish> dishes = new ArrayList<>();
     @Enumerated(EnumType.STRING)
     private StatusOfOrderEnum statusOfOrder;
 
@@ -54,12 +54,12 @@ public class Order {
         this.createDateTime = createDateTime;
     }
 
-    public List<Meal> getMeals() {
-        return meals;
+    public List<Dish> getDishes() {
+        return dishes;
     }
 
-    public void setMeals(List<Meal> meals) {
-        this.meals = meals;
+    public void setDishes(List<Dish> dishes) {
+        this.dishes = dishes;
     }
 
     public StatusOfOrderEnum getStatusOfOrder() {

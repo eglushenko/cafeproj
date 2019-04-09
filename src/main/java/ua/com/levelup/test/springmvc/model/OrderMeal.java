@@ -5,7 +5,7 @@ import ua.com.levelup.test.springmvc.enums.StatusOfMealEnum;
 import javax.persistence.*;
 
 @Entity
-@Table (name = "order_meal")
+@Table (name = "order_dish")
 public class OrderMeal {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -15,7 +15,7 @@ public class OrderMeal {
     private Order order;
     @OneToOne (cascade=CascadeType.ALL)
     @JoinColumn (name="id")
-    private Meal meal;
+    private Dish dish;
     private int quantity;
     @Enumerated(EnumType.STRING)
     private StatusOfMealEnum statusOfMeal;
@@ -36,12 +36,12 @@ public class OrderMeal {
         this.order = order;
     }
 
-    public Meal getMeal() {
-        return meal;
+    public Dish getDish() {
+        return dish;
     }
 
-    public void setMeal(Meal meal) {
-        this.meal = meal;
+    public void setDish(Dish dish) {
+        this.dish = dish;
     }
 
     public int getQuantity() {
