@@ -27,14 +27,10 @@ public class Meal {
      *
      * Возможно использовать другой процент наценки на блюдо if null get standartTax.
      */
-    private int procentOfTax;
 
-    /**
-     * TODO
-     * Сумму вводит ресторан. Как минимум потому что это должно быть круглое число
-     */
-    private double cost;// Имеет ли смысл хранить сумму сгенерированую единожды из ингридиентов и наценки и пересчет по запросу
 
+
+    private double cost;// сумма указаная пользователем
     private int preparationTime;
 
     public long getId() {
@@ -67,14 +63,6 @@ public class Meal {
 
     public void setIngrigientWeight(double ingrigientWeight) {
         this.ingrigientTotalWeight = ingrigientWeight;
-    }
-
-    public double getProcentOfTax() {
-        return procentOfTax;
-    }
-
-    public void setProcentOfTax(int procentOfTax) {
-        this.procentOfTax = procentOfTax;
     }
 
     public double getCost() {

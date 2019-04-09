@@ -1,5 +1,7 @@
 package ua.com.levelup.test.springmvc.model;
 
+import ua.com.levelup.test.springmvc.enums.RoleEnum;
+
 import javax.persistence.*;
 import javax.persistence.Table;
 import java.util.ArrayList;
@@ -11,10 +13,11 @@ public class Role {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    private String name;
+    @Enumerated(EnumType.STRING)
+    private RoleEnum name;
     /**
      * TODO
-     * Одно и то же разрешение могут иметь разные роли...
+     * Одно и то же разрешение могут иметь разные роли... many to many
      */
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "id")
@@ -28,11 +31,11 @@ public class Role {
         this.id = id;
     }
 
-    public String getName() {
+    public RoleEnum getName() {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(RoleEnum name) {
         this.name = name;
     }
 

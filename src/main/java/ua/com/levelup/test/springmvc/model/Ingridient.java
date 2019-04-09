@@ -1,5 +1,7 @@
 package ua.com.levelup.test.springmvc.model;
 
+import ua.com.levelup.test.springmvc.enums.UnitsEnum;
+
 import javax.persistence.*;
 import javax.persistence.Table;
 import java.util.ArrayList;
@@ -20,8 +22,8 @@ public class Ingridient {
      */
     private double cost;
 
-
-    private String unit;//enum
+    @Enumerated(EnumType.STRING)
+    private UnitsEnum unit;
     @ManyToMany
     @JoinTable(name = "ingridient_alergen",
             joinColumns = @JoinColumn(name = "ingridient_id"),
@@ -44,11 +46,11 @@ public class Ingridient {
         this.name = name;
     }
 
-    public String getUnit() {
+    public UnitsEnum getUnit() {
         return unit;
     }
 
-    public void setUnit(String unit) {
+    public void setUnit(UnitsEnum unit) {
         this.unit = unit;
     }
 

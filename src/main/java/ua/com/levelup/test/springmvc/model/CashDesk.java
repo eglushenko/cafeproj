@@ -1,6 +1,7 @@
 package ua.com.levelup.test.springmvc.model;
 
 import org.hibernate.annotations.CreationTimestamp;
+import ua.com.levelup.test.springmvc.enums.TypeOfDocumentEnum;
 
 import javax.persistence.*;
 import javax.persistence.Table;
@@ -15,7 +16,9 @@ public class CashDesk {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     @NotNull
-    private String typeOfDocument; // Enum
+    @Enumerated(EnumType.STRING)
+    private TypeOfDocumentEnum typeOfDocument;
+
 
 
     /**
@@ -48,11 +51,11 @@ public class CashDesk {
         this.id = id;
     }
 
-    public String getTypeOfDocument() {
+    public TypeOfDocumentEnum getTypeOfDocument() {
         return typeOfDocument;
     }
 
-    public void setTypeOfDocument(String typeOfDocument) {
+    public void setTypeOfDocument(TypeOfDocumentEnum typeOfDocument) {
         this.typeOfDocument = typeOfDocument;
     }
 
