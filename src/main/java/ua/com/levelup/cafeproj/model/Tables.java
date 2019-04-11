@@ -15,12 +15,11 @@ public class Tables {
 
     private int maxGuests;  // количество мест за столико максимально
 
-    //TODO поле некорректное - резервация столика может относиться только к определенному пероду времени, т.е. напрашивается новая сущность - Брони
-    private boolean reserved;
-
+    @OneToOne
+    private BookigOfTables reserved;
 
     @OneToOne
-    @JoinColumn(name = "personal_id")//TODO
+    @JoinColumn(name = "personal_id", referencedColumnName = "id")//TODO
     private Personal personal; // официант может быть закрепленн за столиком
 
 
@@ -48,11 +47,11 @@ public class Tables {
         this.maxGuests = maxGuests;
     }
 
-    public boolean isReserved() {
+    public BookigOfTables getReserved() {
         return reserved;
     }
 
-    public void setReserved(boolean reserved) {
+    public void setReserved(BookigOfTables reserved) {
         this.reserved = reserved;
     }
 
