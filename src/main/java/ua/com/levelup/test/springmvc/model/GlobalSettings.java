@@ -1,5 +1,5 @@
 package ua.com.levelup.test.springmvc.model;
-
+// TODO переименнуйте общий пакет как в мастере, чтоб потом не было проблем со слитием
 import javax.persistence.*;
 
 @Entity
@@ -8,6 +8,7 @@ public class GlobalSettings {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+    //TODO слабосмысловые названия: что такое name и value?
     private String name;
     private double value;
 

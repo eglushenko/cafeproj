@@ -15,14 +15,12 @@ public class Tables {
 
     private int maxGuests;  // количество мест за столико максимально
 
+    //TODO поле некорректное - резервация столика может относиться только к определенному пероду времени, т.е. напрашивается новая сущность - Брони
     private boolean reserved;
 
-    /**
-     * TODO
-     * Почему это стринг, а не связка с персоналом?
-     */
+
     @OneToOne
-    @JoinColumn(name = "id")
+    @JoinColumn(name = "id")//TODO
     private Personal personal; // официант может быть закрепленн за столиком
 
 

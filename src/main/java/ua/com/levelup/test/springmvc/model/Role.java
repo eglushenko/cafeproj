@@ -15,11 +15,10 @@ public class Role {
     private long id;
     @Enumerated(EnumType.STRING)
     private RoleEnum name;
-    @ManyToMany
+    @ManyToMany//TODO каскадость
     @JoinTable(name = "premissions_role",
                 joinColumns = @JoinColumn (name = "premissions_id"),
             inverseJoinColumns = @JoinColumn (name = "role_id"))
-
     private List<Premissions> premissions = new ArrayList<>();
 
     public long getId() {

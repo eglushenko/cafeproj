@@ -14,22 +14,31 @@ public class Personal {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+
     @NotNull
     private String firstName;
+
     private String lastName;
+
     private String patronymic;
+
     private String numberOfPassport;
+
     @NotNull
     private String address;
+
     @Phone
     @NotNull
     private String phoneNumber;
+
     @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "id")
+    @JoinColumn(name = "id")//TODO
     private List<Doc> docs = new ArrayList<Doc>();
+
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "id")
+    @JoinColumn(name = "id")//TODO
     private User user;
+    
     public Personal(){}
 
     public Personal(String firstName, String lastName, String patronymic, String numberOfPassport, String address, String phoneNumber) {

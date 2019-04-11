@@ -9,6 +9,7 @@ public class Doc {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+    //TODO не стоит имя столбца делать капслоком, если это не общий стиль проекта
     @Lob
     @Basic(fetch = FetchType.LAZY)
     @Column(name = "DOC", columnDefinition = "BLOB", nullable = false)

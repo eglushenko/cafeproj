@@ -14,6 +14,12 @@ public class Dish {
 
     private String name;
 
+    /**
+     * TODO
+     * в @JoinColumn должен указываться столбец в таблице Ingridient, где указан dish_id.
+     * Т.е. это никак не может быть поле с первичным ключом.
+     * И почему связь у нас с Ингридиентом, а не с ДишИнгридиентом? Напоминаю сущность нужна для веса в том или ином блюде
+     */
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name ="id")
     private List<Ingridient> ingridients = new ArrayList<Ingridient>();

@@ -3,20 +3,24 @@ package ua.com.levelup.test.springmvc.model;
 import ua.com.levelup.test.springmvc.enums.StatusOfMealEnum;
 
 import javax.persistence.*;
-
+//TODO code style разделять абзацами поля, чтоб было понятно к чему какая аннотация
 @Entity
 @Table (name = "order_dish")
 public class OrderDishes {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+
     @OneToOne (cascade=CascadeType.ALL)
     @JoinColumn (name="id")
     private Order order;
+
     @OneToOne (cascade=CascadeType.ALL)
     @JoinColumn (name="id")
     private Dish dish;
+
     private int quantity;
+
     @Enumerated(EnumType.STRING)
     private StatusOfMealEnum statusOfMeal;
 

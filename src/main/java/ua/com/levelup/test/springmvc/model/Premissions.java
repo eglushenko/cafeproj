@@ -12,15 +12,17 @@ public class Premissions {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+
     @Enumerated(EnumType.STRING)
     private PremissionsEnum name;
-    @Column(name = "enabled")
+
+    @Column(name = "enabled")//TODO а зачем заполнять аттрибут нейм, если он полностью совпадает?
     private boolean enabled;
-    @ManyToMany
+
+    @ManyToMany//TODO каскадность
     @JoinTable(name = "premissions_role",
             joinColumns = @JoinColumn (name = "role_id"),
             inverseJoinColumns = @JoinColumn (name = "premissions_id"))
-
     private List<Role> roles;
 
     public long getId() {

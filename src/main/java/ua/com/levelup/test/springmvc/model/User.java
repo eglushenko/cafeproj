@@ -32,6 +32,8 @@ public class User {
     @Phone
     private String phone;
 
+    //TODO у юзера еще есть роль
+
     public User(){}
 
     public User(String login, String password, String firstname, String lastname,String email,String address,String phone){

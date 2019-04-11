@@ -15,15 +15,13 @@ public class Ingridient {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String name;
-    /**
-     * TODO
-     * Целесообразно уточнить от цего отталкивается цена
-     * costPerKgL
-     */
+
     private double costPerUnit;
 
     @Enumerated(EnumType.STRING)
     private UnitsEnum unit;
+
+//TODO прописать каскадность для всех связей типа @ManyToMany
     @ManyToMany
     @JoinTable(name = "ingridient_alergen",
             joinColumns = @JoinColumn(name = "ingridient_id"),
