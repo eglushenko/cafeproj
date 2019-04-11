@@ -6,9 +6,9 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="cafeproj" />
         <module name="mvc-cafeprojevg" />
         <module name="spring-mvc-test" />
-        <module name="springmvcexp" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

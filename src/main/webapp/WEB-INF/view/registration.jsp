@@ -10,7 +10,7 @@
 <body>
 <spring:message code="app.lang.title"/> : <a href="?lang=ru">Russian</a>|<a href="?lang=uk_UA">Ukrainian</a>
 <h1>Enter data:</h1>
-<%--@elvariable id="user" type="ua.com.levelup.test.springmvc.model.User"--%>
+<%--@elvariable id="user" type="ua.com.levelup.cafeproj.model.User"--%>
 <f:form id="regForm" modelAttribute="user"  action="auth" method="post">
     <table align="center">
         <tr>
