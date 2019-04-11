@@ -13,7 +13,6 @@ public class BookigOfTables {
      * TODO
      * Связь с id в таблице столов
      */
-    private long tables_id;
 
     private boolean reserved = true;
 
