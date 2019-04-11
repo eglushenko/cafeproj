@@ -21,7 +21,7 @@ public class Dish {
      * И почему связь у нас с Ингридиентом, а не с ДишИнгридиентом? Напоминаю сущность нужна для веса в том или ином блюде
      */
     @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name ="id")
+    @JoinColumn(name ="dish_id")
     private List<Ingridient> ingridients = new ArrayList<Ingridient>();
 
     private double ingrigientTotalWeight;

@@ -20,7 +20,7 @@ public class Tables {
 
 
     @OneToOne
-    @JoinColumn(name = "id")//TODO
+    @JoinColumn(name = "personal_id")//TODO
     private Personal personal; // официант может быть закрепленн за столиком
 
 

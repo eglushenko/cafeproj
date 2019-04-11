@@ -9,6 +9,11 @@ public class Doc {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "doc_id")
+    private Doc docId;
+
     @Lob
     @Basic(fetch = FetchType.LAZY)
     @Column(name = "doc", columnDefinition = "BLOB", nullable = false)
@@ -20,6 +25,14 @@ public class Doc {
 
     public void setId(long id) {
         this.id = id;
+    }
+
+    public Doc getDocId() {
+        return docId;
+    }
+
+    public void setDocId(Doc docId) {
+        this.docId = docId;
     }
 
     public byte[] getDoc() {

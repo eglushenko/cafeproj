@@ -31,12 +31,11 @@ public class Personal {
     @NotNull
     private String phoneNumber;
 
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "id")//TODO
+    @OneToMany(mappedBy = "doc")
     private List<Doc> docs = new ArrayList<Doc>();
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "id")//TODO
+    @JoinColumn(name = "user_id")//TODO
     private User user;
     
     public Personal(){}

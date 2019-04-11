@@ -8,8 +8,9 @@ public class GlobalSettings {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    //TODO слабосмысловые названия: что такое name и value?
+
     private String nameOfParameter;
+
     private String parameter;
 
     public long getId() {

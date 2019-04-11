@@ -6,9 +6,14 @@ import javax.persistence.*;
 @Entity
 @Table (name = "order_dish")
 public class OrderDishes {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+
+    @ManyToOne
+    @JoinColumn(name = "id")
+    private OrderDishes orderDishes;
 
     @OneToOne (cascade=CascadeType.ALL)
     @JoinColumn (name="id")
