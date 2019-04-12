@@ -28,6 +28,9 @@ public class Order {
     private StatusOfOrder statusOfOrder;
 
     private int numberOfTable;
+    @OneToOne
+    @JoinColumn(name = "cash_operations_id")
+    private CashDesk cashDesk;
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "id")
@@ -81,4 +84,11 @@ public class Order {
         this.personal = personal;
     }
 
+    public CashDesk getCashDesk() {
+        return cashDesk;
+    }
+
+    public void setCashDesk(CashDesk cashDesk) {
+        this.cashDesk = cashDesk;
+    }
 }

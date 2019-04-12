@@ -18,6 +18,10 @@ public class CashDesk {
     @Enumerated(EnumType.STRING)
     private TypeOfDocument typeOfDocument;
 
+    @OneToOne
+    private Order order;
+
+
     @Column
     @CreationTimestamp
     private LocalDateTime dateTimeCreation;
@@ -91,5 +95,13 @@ public class CashDesk {
 
     public void setUserOfDestantion(String userOfDestantion) {
         this.userOfDestantion = userOfDestantion;
+    }
+
+    public Order getOrder() {
+        return order;
+    }
+
+    public void setOrder(Order order) {
+        this.order = order;
     }
 }

@@ -12,7 +12,7 @@ public class Doc {
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "doc_id")
-    private Doc docId;
+    private Personal personal;
 
     @Lob
     @Basic(fetch = FetchType.LAZY)
@@ -27,12 +27,12 @@ public class Doc {
         this.id = id;
     }
 
-    public Doc getDocId() {
-        return docId;
+    public Personal getPersonal() {
+        return personal;
     }
 
-    public void setDocId(Doc docId) {
-        this.docId = docId;
+    public void setPersonal(Personal personal) {
+        this.personal = personal;
     }
 
     public byte[] getDoc() {
