@@ -16,7 +16,7 @@ public class Doc {
 
     @Lob
     @Basic(fetch = FetchType.LAZY)
-    @Column(name = "doc",length = 256,columnDefinition = "BLOB", nullable = false )
+    @Column(name = "doc")
     private byte[] doc;
 
     public long getId() {
