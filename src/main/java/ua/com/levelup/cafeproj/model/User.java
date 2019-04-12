@@ -32,6 +32,8 @@ public class User {
 
     @Phone
     private String phone;
+    @OneToOne(mappedBy = "personal")
+    private Personal personal;
 
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "id")

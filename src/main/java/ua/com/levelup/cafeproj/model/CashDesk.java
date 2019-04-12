@@ -32,11 +32,10 @@ public class CashDesk {
      * Почитайте про аннотацию @PrimaryKeyJoinColumn - возможно подразумевалось это
      */
     @OneToOne
-    @JoinColumn(name = "id")
+    @JoinColumn(name = "personal_id")
     private Personal personal;
 
     private String userOfDestantion;
-
 
     public long getId() {
         return id;

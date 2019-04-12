@@ -11,16 +11,12 @@ public class OrderDishes {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @ManyToOne
-    @JoinColumn(name = "id")
-    private OrderDishes orderDishes;
-
     @OneToOne (cascade=CascadeType.ALL)
     @JoinColumn (name="id")
     private Order order;
 
-    @OneToOne (cascade=CascadeType.ALL)
-    @JoinColumn (name="id")
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "id")
     private Dish dish;
 
     private int quantity;

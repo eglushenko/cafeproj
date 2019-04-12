@@ -20,8 +20,8 @@ public class Order {
     @CreationTimestamp
     private LocalDateTime createDateTime = LocalDateTime.now();
 
-    @OneToMany(mappedBy = "order_dish")
-    //TODO и опять ошибка с именем столбца. И почему вдруг в Ордере Диши, а не ОрдерДиши?
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "order_dish_id" )//TODO и опять ошибка с именем столбца. И почему вдруг в Ордере Диши, а не ОрдерДиши?
     private List<OrderDishes> dishes = new ArrayList<>();
 
     @Enumerated(EnumType.STRING)

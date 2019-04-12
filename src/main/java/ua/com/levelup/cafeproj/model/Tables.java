@@ -19,7 +19,7 @@ public class Tables {
     private BookigOfTables reserved;
 
     @OneToOne
-    @JoinColumn(name = "personal_id", referencedColumnName = "id")//TODO
+    @JoinColumn(name = "personal_id")//TODO
     private Personal personal; // официант может быть закрепленн за столиком
 
 
