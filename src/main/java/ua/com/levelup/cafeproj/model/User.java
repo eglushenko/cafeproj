@@ -32,7 +32,7 @@ public class User {
 
     @Phone
     private String phone;
-    @OneToOne(mappedBy = "personal")
+    @OneToOne
     private Personal personal;
 
     @OneToMany(cascade = CascadeType.ALL)
@@ -41,7 +41,7 @@ public class User {
 
     public User(){}
 
-    public User(@Size(min = 3, max = 30) @NotNull String login, String password, String firstname, String lastname, @Email @NotNull String email, String address, String phone, Set<Role> roles) {
+    public User(@Size(min = 3, max = 30) @NotNull String login, String password, String firstname, String lastname, @Email @NotNull String email, String address, String phone) {
         this.login = login;
         this.password = password;
         this.firstname = firstname;
@@ -122,6 +122,14 @@ public class User {
 
     public void setId(long id) {
         this.id = id;
+    }
+
+    public Personal getPersonal() {
+        return personal;
+    }
+
+    public void setPersonal(Personal personal) {
+        this.personal = personal;
     }
 
     @Override

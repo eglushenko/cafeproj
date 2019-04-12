@@ -5,15 +5,17 @@ import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
+@Table(name = "booking_of_tables")
 public class BookigOfTables {
     @Id
+
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     /**
      *
      * Связь с id в таблице столов
      */
-    @OneToOne(mappedBy = "tables")
+    @OneToOne
     private Tables tables;
 
     private boolean reserved = true;

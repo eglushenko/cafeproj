@@ -9,9 +9,11 @@ public class GlobalSettings {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
+    @Column(name = "nameOfParameter")
     private String nameOfParameter;
 
-    private String parameter;
+    @Column(name = "parameterValue")
+    private String parameterValue;
 
     public long getId() {
         return id;
@@ -29,11 +31,11 @@ public class GlobalSettings {
         this.nameOfParameter = nameOfParameter;
     }
 
-    public String getParameter() {
-        return parameter;
+    public String getParameterValue() {
+        return parameterValue;
     }
 
-    public void setParameter(String parameter) {
-        this.parameter = parameter;
+    public void setParameterValue(String parameterValue) {
+        this.parameterValue = parameterValue;
     }
 }

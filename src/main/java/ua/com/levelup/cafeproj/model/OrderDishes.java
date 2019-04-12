@@ -16,7 +16,7 @@ public class OrderDishes {
     private Order order;
 
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "id")
+    @JoinColumn(name = "id",insertable = false, updatable = false)
     private Dish dish;
 
     private int quantity;

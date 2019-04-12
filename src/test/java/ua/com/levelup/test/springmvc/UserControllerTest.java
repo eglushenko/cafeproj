@@ -19,6 +19,7 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 import ua.com.levelup.cafeproj.DBConfig;
 import ua.com.levelup.cafeproj.WebConfig;
+import ua.com.levelup.cafeproj.model.Role;
 import ua.com.levelup.cafeproj.model.User;
 
 import javax.servlet.ServletContext;
@@ -60,7 +61,7 @@ public class UserControllerTest {
     public void createUserAPI() throws Exception
     {
         mockMvc.perform( post("/users")
-                .content(asJsonString(new User("mylogin", "xxx", "firstName4", "lastName4", "email4@mail.com",null,"82348653123")))
+                .content(asJsonString(new User("Bob", "123456", "Ugjh", "Bubich", "rrrr@i.ua", "Dnipro street","0981112233")))
                 .contentType(MediaType.APPLICATION_JSON)
                 .accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isCreated());

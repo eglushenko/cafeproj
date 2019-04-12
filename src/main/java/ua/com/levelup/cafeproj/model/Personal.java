@@ -7,6 +7,7 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name="personal")
@@ -35,8 +36,11 @@ public class Personal {
     private List<Doc> docs = new ArrayList<Doc>();
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "user_id")//TODO
+    @JoinColumn(name = "personal_id")//TODO
     private User user;
+    @OneToMany(mappedBy = "personal")
+    private Set<Tables> tablesSet;
+
     
     public Personal(){}
 

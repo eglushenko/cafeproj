@@ -3,9 +3,10 @@ package ua.com.levelup.cafeproj.model;
 import javax.persistence.*;
 
 import javax.persistence.Table;
+import java.util.Set;
 
 @Entity
-@Table(name = "tables")
+@Table(name = "tablesOf")
 
 public class Tables {
     @Id
@@ -16,10 +17,12 @@ public class Tables {
     private int maxGuests;  // количество мест за столико максимально
 
     @OneToOne
+    @JoinColumn(name = "tables_id")
+
     private BookigOfTables reserved;
 
-    @OneToOne
-    @JoinColumn(name = "personal_id")//TODO
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "personal_id")
     private Personal personal; // официант может быть закрепленн за столиком
 
 
