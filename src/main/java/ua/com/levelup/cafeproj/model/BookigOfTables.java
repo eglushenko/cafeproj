@@ -53,4 +53,5 @@ public class BookigOfTables {
     public void setTimeStartReserved(LocalDateTime timeStartReserved) {
         this.timeStartReserved = timeStartReserved;
     }
+
 }

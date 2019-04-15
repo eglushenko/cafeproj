@@ -117,4 +117,5 @@ public class CashDesk {
     public void setDiscount(Discount discount) {
         this.discount = discount;
     }
+
 }

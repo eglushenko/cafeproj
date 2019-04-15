@@ -1,5 +1,7 @@
 package ua.com.levelup.cafeproj.model;
 
+import ua.com.levelup.cafeproj.enums.AlergenAcronim;
+
 import javax.persistence.*;
 import javax.persistence.Table;
 import java.util.ArrayList;
@@ -14,7 +16,8 @@ public class Alergen {
     private String name;
     @ManyToMany(mappedBy = "alergens")
     private List<Ingridient> ingridients = new ArrayList<>();
-    private String alergenAcronim;
+    @Enumerated(EnumType.STRING)
+    private AlergenAcronim alergenAcronim;
 
     public long getId() {
         return id;
@@ -38,5 +41,13 @@ public class Alergen {
 
     public void setIngridients(List<Ingridient> ingridients) {
         this.ingridients = ingridients;
+    }
+
+    public AlergenAcronim getAlergenAcronim() {
+        return alergenAcronim;
+    }
+
+    public void setAlergenAcronim(AlergenAcronim alergenAcronim) {
+        this.alergenAcronim = alergenAcronim;
     }
 }

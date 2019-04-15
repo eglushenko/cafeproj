@@ -125,4 +125,12 @@ public class Personal {
     public void setUser(User user) {
         this.user = user;
     }
+
+    public Set<Tables> getTablesSet() {
+        return tablesSet;
+    }
+
+    public void setTablesSet(Set<Tables> tablesSet) {
+        this.tablesSet = tablesSet;
+    }
 }

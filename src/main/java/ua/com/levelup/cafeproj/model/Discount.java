@@ -149,4 +149,5 @@ public class Discount {
     public void setCashDesk(Set<CashDesk> cashDesk) {
         this.cashDesk = cashDesk;
     }
+
 }
