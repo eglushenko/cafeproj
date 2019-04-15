@@ -7,6 +7,7 @@ import javax.persistence.*;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
+import java.util.Set;
 
 @Entity
 @Table(name = "cash_operations")
@@ -27,6 +28,10 @@ public class CashDesk {
     private LocalDateTime dateTimeCreation;
 
     private String destantionDocument;
+
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "disconts_id")
+    private Discount discount;
 
     private double sum;
     /**
@@ -103,5 +108,13 @@ public class CashDesk {
 
     public void setOrder(Order order) {
         this.order = order;
+    }
+
+    public Discount getDiscount() {
+        return discount;
+    }
+
+    public void setDiscount(Discount discount) {
+        this.discount = discount;
     }
 }

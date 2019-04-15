@@ -9,6 +9,7 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 import java.util.Date;
+import java.util.Set;
 
 @Entity
 @Table(name = "discount")
@@ -16,6 +17,9 @@ public class Discount {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+
+    @OneToMany(cascade = CascadeType.ALL)
+    private Set<CashDesk> cashDesk;
 
     @NotNull
     private String numberOfDiscount;
@@ -136,5 +140,13 @@ public class Discount {
 
     public void setEndDate(Date endDate) {
         this.endDate = endDate;
+    }
+
+    public Set<CashDesk> getCashDesk() {
+        return cashDesk;
+    }
+
+    public void setCashDesk(Set<CashDesk> cashDesk) {
+        this.cashDesk = cashDesk;
     }
 }
