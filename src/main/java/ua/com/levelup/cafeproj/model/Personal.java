@@ -36,7 +36,7 @@ public class Personal {
     private List<Doc> docs = new ArrayList<Doc>();
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "personal_id")//TODO
+    @JoinColumn(name = "personal_id")
     private User user;
     @OneToMany(mappedBy = "personal")
     private Set<Tables> tablesSet;

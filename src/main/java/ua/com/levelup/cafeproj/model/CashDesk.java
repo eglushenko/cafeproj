@@ -34,12 +34,7 @@ public class CashDesk {
     private Discount discount;
 
     private double sum;
-    /**
-     * TODO
-     * в @JoinColumn указывается имя столбца в таблице CashDesk, куда будет помещен ид Персонала.
-     * Т.е. это НИКАК не может быть поле с первичным ключом
-     * Почитайте про аннотацию @PrimaryKeyJoinColumn - возможно подразумевалось это
-     */
+
     @OneToOne
     @JoinColumn(name = "personal_id")
     private Personal personal;
