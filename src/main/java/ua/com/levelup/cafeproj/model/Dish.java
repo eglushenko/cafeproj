@@ -22,7 +22,7 @@ public class Dish {
      */
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name ="dish_id")
-    private List<Ingridient> ingridients = new ArrayList<Ingridient>();
+    private List<DishIngridient> dishIngridientList = new ArrayList<>();
 
     private double ingrigientTotalWeight;
 
@@ -46,12 +46,12 @@ public class Dish {
         this.name = name;
     }
 
-    public List<Ingridient> getIngridients() {
-        return ingridients;
+    public List<DishIngridient> getDishIngridientList() {
+        return dishIngridientList;
     }
 
-    public void setIngridients(List<Ingridient> ingridients) {
-        this.ingridients = ingridients;
+    public void setDishIngridientList(List<DishIngridient> dishIngridientList) {
+        this.dishIngridientList = dishIngridientList;
     }
 
     public double getIngrigientWeight() {

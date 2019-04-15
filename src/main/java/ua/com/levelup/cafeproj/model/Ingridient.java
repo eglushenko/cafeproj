@@ -4,6 +4,8 @@ import ua.com.levelup.cafeproj.enums.Units;
 
 import javax.persistence.*;
 import javax.persistence.Table;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -20,6 +22,9 @@ public class Ingridient {
     @Enumerated(EnumType.STRING)
     private Units unit;
 
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name ="ingridients_id")
+    private List<DishIngridient> dishIngridientList = new ArrayList<>();
 
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "ingridient_alergen",
@@ -65,5 +70,13 @@ public class Ingridient {
 
     public void setAlergens(Set<Alergen> alergens) {
         this.alergens = alergens;
+    }
+
+    public List<DishIngridient> getDishIngridientList() {
+        return dishIngridientList;
+    }
+
+    public void setDishIngridientList(List<DishIngridient> dishIngridientList) {
+        this.dishIngridientList = dishIngridientList;
     }
 }
