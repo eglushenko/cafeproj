@@ -6,7 +6,7 @@ import javax.persistence.Table;
 import java.util.Set;
 
 @Entity
-@Table(name = "tablesOf")
+@Table(name = "tables")
 
 public class Tables {
     @Id
@@ -18,7 +18,6 @@ public class Tables {
 
     @OneToOne
     @JoinColumn(name = "tables_id")
-
     private BookigOfTables reserved;
 
     @ManyToOne(cascade = CascadeType.ALL)

@@ -32,6 +32,9 @@ public class Order {
     @JoinColumn(name = "cash_operations_id")
     private CashDesk cashDesk;
 
+    @OneToOne
+    private Delivery delivery;
+
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "id")
     private Personal personal;
