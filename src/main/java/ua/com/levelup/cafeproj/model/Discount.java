@@ -110,10 +110,6 @@ public class Discount {
         return amountOfDiscount;
     }
 
-    public void setAmountOfDiscount(int amountOfDiscount) {
-        this.amountOfDiscount = amountOfDiscount;
-    }
-
     public String getClientLastName() {
         return clientLastName;
     }

@@ -12,13 +12,20 @@ public class Tables {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
     private String name; // номер столика или его название
 
     private int maxGuests;  // количество мест за столико максимально
 
     @OneToOne
-    @JoinColumn(name = "tables_id")
+    @JoinColumn(name = "booking_id")
     private BookigOfTables reserved;
+
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "orders_tables",
+            joinColumns = @JoinColumn(name = "tables_id"),
+            inverseJoinColumns = @JoinColumn(name = "order_id"))
+    private Set<Order> orders;
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "personal_id")
@@ -63,5 +70,13 @@ public class Tables {
 
     public void setPersonal(Personal personal) {
         this.personal = personal;
+    }
+
+    public Set<Order> getOrders() {
+        return orders;
+    }
+
+    public void setOrders(Set<Order> orders) {
+        this.orders = orders;
     }
 }

@@ -11,10 +11,7 @@ public class BookigOfTables {
 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    /**
-     *
-     * Связь с id в таблице столов
-     */
+
     @OneToOne
     private Tables tables;
 

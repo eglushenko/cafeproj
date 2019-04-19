@@ -8,6 +8,7 @@ import javax.persistence.Table;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "orders")
@@ -27,7 +28,12 @@ public class Order {
     @Enumerated(EnumType.STRING)
     private StatusOfOrder statusOfOrder;
 
-    private int numberOfTable;
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "orders_tables",
+            joinColumns = @JoinColumn(name = "order_id"),
+            inverseJoinColumns = @JoinColumn(name = "tables_id"))
+    private Set<Tables> tables;
+
     @OneToOne
     @JoinColumn(name = "cash_operations_id")
     private CashDesk cashDesk;
@@ -71,12 +77,20 @@ public class Order {
         this.statusOfOrder = statusOfOrder;
     }
 
-    public int getNumberOfTable() {
-        return numberOfTable;
+    public Set<Tables> getTables() {
+        return tables;
     }
 
-    public void setNumberOfTable(int numberOfTable) {
-        this.numberOfTable = numberOfTable;
+    public void setTables(Set<Tables> tables) {
+        this.tables = tables;
+    }
+
+    public Delivery getDelivery() {
+        return delivery;
+    }
+
+    public void setDelivery(Delivery delivery) {
+        this.delivery = delivery;
     }
 
     public Personal getPersonal() {
@@ -94,4 +108,5 @@ public class Order {
     public void setCashDesk(CashDesk cashDesk) {
         this.cashDesk = cashDesk;
     }
+
 }
