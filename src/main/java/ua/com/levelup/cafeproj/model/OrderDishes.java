@@ -11,10 +11,6 @@ public class OrderDishes {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @OneToOne (cascade=CascadeType.ALL)
-    @JoinColumn (name="order_id")
-    private Order order;
-
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "dish_id")
     private Dish dish;
@@ -30,14 +26,6 @@ public class OrderDishes {
 
     public void setId(long id) {
         this.id = id;
-    }
-
-    public Order getOrder() {
-        return order;
-    }
-
-    public void setOrder(Order order) {
-        this.order = order;
     }
 
     public Dish getDish() {
