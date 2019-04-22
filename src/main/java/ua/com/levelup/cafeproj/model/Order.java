@@ -42,7 +42,7 @@ public class Order {
     private Delivery delivery;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "id")
+    @JoinColumn(name = "personal_id")
     private Personal personal;
 
     public long getId() {

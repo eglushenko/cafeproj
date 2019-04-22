@@ -73,7 +73,6 @@ public class Discount {
         this.clientFirstName = clientFirstName;
     }
 
-
     public String getClientPatronim() {
         return clientPatronim;
     }

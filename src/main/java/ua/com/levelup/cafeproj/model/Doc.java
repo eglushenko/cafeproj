@@ -11,7 +11,7 @@ public class Doc {
     private long id;
 
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "doc_id")
+    @JoinColumn(name = "personal_id")
     private Personal personal;
 
     @Lob

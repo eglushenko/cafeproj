@@ -34,8 +34,8 @@ public class AuthController {
             return "registration";
         }
         model.addAttribute("generalInfo",
-                messageSource.getMessage("info.general", new String[]{user.getLogin(),user.getFirstname(),user.getLastname()},new Locale("uk", "UA")));
-        model.addAttribute("contactInfo", user.getAddress()+", "+user.getEmail()+", "+user.getPhone());
+                messageSource.getMessage("info.general", new String[]{user.getLogin()},new Locale("uk", "UA")));
+        model.addAttribute("contactInfo", user.getLogin());
         return "userview";
     }
 

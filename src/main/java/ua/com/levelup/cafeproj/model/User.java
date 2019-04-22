@@ -8,6 +8,7 @@ import javax.persistence.Table;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -23,41 +24,30 @@ public class User {
 
     private String password;
 
-    private String firstname;
-    private String lastname;
-
-    @Email @NotNull
-    private String email;
-    private String address;
-
-    @Phone
-    private String phone;
     @OneToOne
     private Personal personal;
 
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "id")
-    private Set<Role> roles;
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "user_role",
+            joinColumns = @JoinColumn (name = "user_id"),
+            inverseJoinColumns = @JoinColumn (name = "role_id"))
+    private List<Role> roles;
 
-    public User(){}
+    public User(){
 
-    public User(@Size(min = 3, max = 30) @NotNull String login, String password, String firstname, String lastname, @Email @NotNull String email, String address, String phone) {
+    }
+
+    public User(@Size(min = 3, max = 30) @NotNull String login, String password) {
         this.login = login;
         this.password = password;
-        this.firstname = firstname;
-        this.lastname = lastname;
-        this.email = email;
-        this.address = address;
-        this.phone = phone;
-
     }
 
-    public Set<Role> getRoles() {
-        return roles;
+    public long getId() {
+        return id;
     }
 
-    public void setRoles(Set<Role> roles) {
-        this.roles = roles;
+    public void setId(long id) {
+        this.id = id;
     }
 
     public String getLogin() {
@@ -76,52 +66,12 @@ public class User {
         this.password = password;
     }
 
-    public String getFirstname() {
-        return firstname;
+    public List<Role> getRoles() {
+        return roles;
     }
 
-    public void setFirstname(String firstname) {
-        this.firstname = firstname;
-    }
-
-    public String getLastname() {
-        return lastname;
-    }
-
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public String getPhone() {
-        return phone;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
+    public void setRoles(List<Role> roles) {
+        this.roles = roles;
     }
 
     public Personal getPersonal() {
@@ -132,17 +82,4 @@ public class User {
         this.personal = personal;
     }
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", login='" + login + '\'' +
-                ", password='" + password + '\'' +
-                ", firstname='" + firstname + '\'' +
-                ", lastname='" + lastname + '\'' +
-                ", email='" + email + '\'' +
-                ", address='" + address + '\'' +
-                ", phone='" + phone + '\'' +
-                '}';
-    }
 }

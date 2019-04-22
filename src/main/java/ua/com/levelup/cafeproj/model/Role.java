@@ -11,12 +11,20 @@ public class Role {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+
     @Enumerated(EnumType.STRING)
     private ua.com.levelup.cafeproj.enums.Role name;
+
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "user_role",
+            joinColumns = @JoinColumn (name = "role_id"),
+            inverseJoinColumns = @JoinColumn (name = "user_id"))
+    private List<User> users;
+
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "premissions_role",
-                joinColumns = @JoinColumn (name = "premissions_id"),
-            inverseJoinColumns = @JoinColumn (name = "role_id"))
+                joinColumns = @JoinColumn (name = "role_id"),
+            inverseJoinColumns = @JoinColumn (name = "premissions_id"))
     private List<Premissions> premissions = new ArrayList<>();
 
     public long getId() {
@@ -43,5 +51,11 @@ public class Role {
         this.premissions = premissions;
     }
 
+    public List<User> getUsers() {
+        return users;
+    }
 
+    public void setUsers(List<User> users) {
+        this.users = users;
+    }
 }

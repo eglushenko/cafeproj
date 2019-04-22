@@ -9,8 +9,8 @@ import java.util.List;
 import java.util.Set;
 
 @Entity
-@Table(name = "ingridient")
-public class Ingridient {
+@Table(name = "ingredient")
+public class Ingredient {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
@@ -23,12 +23,12 @@ public class Ingridient {
     private Units unit;
 
     @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name ="ingridients_id")
-    private List<DishIngridient> dishIngridientList = new ArrayList<>();
+    @JoinColumn(name ="ingredients_id")
+    private List<DishIngredient> dishIngredientList = new ArrayList<>();
 
     @ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable(name = "ingridient_alergen",
-            joinColumns = @JoinColumn(name = "ingridient_id"),
+    @JoinTable(name = "ingredient_alergen",
+            joinColumns = @JoinColumn(name = "ingredient_id"),
             inverseJoinColumns = @JoinColumn(name = "alergen_id"))
     private Set<Alergen> alergens;
 
@@ -72,11 +72,11 @@ public class Ingridient {
         this.alergens = alergens;
     }
 
-    public List<DishIngridient> getDishIngridientList() {
-        return dishIngridientList;
+    public List<DishIngredient> getDishIngredientList() {
+        return dishIngredientList;
     }
 
-    public void setDishIngridientList(List<DishIngridient> dishIngridientList) {
-        this.dishIngridientList = dishIngridientList;
+    public void setDishIngredientList(List<DishIngredient> dishIngredientList) {
+        this.dishIngredientList = dishIngredientList;
     }
 }

@@ -19,8 +19,8 @@ public class Premissions {
 
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "premissions_role",
-            joinColumns = @JoinColumn (name = "role_id"),
-            inverseJoinColumns = @JoinColumn (name = "premissions_id"))
+            joinColumns = @JoinColumn (name = "premissions_id"),
+            inverseJoinColumns = @JoinColumn (name = "role_id"))
     private List<Role> roles;
 
     public long getId() {
@@ -54,4 +54,5 @@ public class Premissions {
     public void setRoles(List<Role> roles) {
         this.roles = roles;
     }
+
 }

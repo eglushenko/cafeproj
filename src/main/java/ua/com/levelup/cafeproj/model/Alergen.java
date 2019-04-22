@@ -15,7 +15,7 @@ public class Alergen {
     private long id;
     private String name;
     @ManyToMany(mappedBy = "alergens")
-    private List<Ingridient> ingridients = new ArrayList<>();
+    private List<Ingredient> ingredients = new ArrayList<>();
     @Enumerated(EnumType.STRING)
     private AlergenAcronim alergenAcronim;
 
@@ -35,12 +35,12 @@ public class Alergen {
         this.name = name;
     }
 
-    public List<Ingridient> getIngridients() {
-        return ingridients;
+    public List<Ingredient> getIngredients() {
+        return ingredients;
     }
 
-    public void setIngridients(List<Ingridient> ingridients) {
-        this.ingridients = ingridients;
+    public void setIngredients(List<Ingredient> ingredients) {
+        this.ingredients = ingredients;
     }
 
     public AlergenAcronim getAlergenAcronim() {

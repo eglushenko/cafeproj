@@ -12,11 +12,11 @@ public class OrderDishes {
     private long id;
 
     @OneToOne (cascade=CascadeType.ALL)
-    @JoinColumn (name="id")
+    @JoinColumn (name="order_id")
     private Order order;
 
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "id",insertable = false, updatable = false)
+    @JoinColumn(name = "dish_id")
     private Dish dish;
 
     private int quantity;

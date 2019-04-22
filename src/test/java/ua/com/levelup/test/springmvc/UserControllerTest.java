@@ -61,7 +61,7 @@ public class UserControllerTest {
     public void createUserAPI() throws Exception
     {
         mockMvc.perform( post("/users")
-                .content(asJsonString(new User("Bob", "123456", "Ugjh", "Bubich", "rrrr@i.ua", "Dnipro street","0981112233")))
+                .content(asJsonString(new User("Boby", "123456789A")))
                 .contentType(MediaType.APPLICATION_JSON)
                 .accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isCreated());

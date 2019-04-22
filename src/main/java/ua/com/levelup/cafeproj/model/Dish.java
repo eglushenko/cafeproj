@@ -16,9 +16,7 @@ public class Dish {
 
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name ="dish_id")
-    private List<DishIngridient> dishIngridientList = new ArrayList<>();
-
-    private double ingrigientTotalWeight;
+    private List<DishIngredient> dishIngredientList = new ArrayList<>();
 
     private double cost;                                                                                                // сумма указаная пользователем
 
@@ -40,20 +38,12 @@ public class Dish {
         this.name = name;
     }
 
-    public List<DishIngridient> getDishIngridientList() {
-        return dishIngridientList;
+    public List<DishIngredient> getDishIngredientList() {
+        return dishIngredientList;
     }
 
-    public void setDishIngridientList(List<DishIngridient> dishIngridientList) {
-        this.dishIngridientList = dishIngridientList;
-    }
-
-    public double getIngrigientWeight() {
-        return ingrigientTotalWeight;
-    }
-
-    public void setIngrigientWeight(double ingrigientWeight) {
-        this.ingrigientTotalWeight = ingrigientWeight;
+    public void setDishIngredientList(List<DishIngredient> dishIngredientList) {
+        this.dishIngredientList = dishIngredientList;
     }
 
     public double getCost() {
@@ -70,14 +60,6 @@ public class Dish {
 
     public void setPreparationTime(int preparationTime) {
         this.preparationTime = preparationTime;
-    }
-
-    public double getIngrigientTotalWeight() {
-        return ingrigientTotalWeight;
-    }
-
-    public void setIngrigientTotalWeight(double ingrigientTotalWeight) {
-        this.ingrigientTotalWeight = ingrigientTotalWeight;
     }
 
 }
