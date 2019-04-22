@@ -13,9 +13,12 @@ public class Alergen {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+
     private String name;
+
     @ManyToMany(mappedBy = "alergens")
     private List<Ingredient> ingredients = new ArrayList<>();
+
     @Enumerated(EnumType.STRING)
     private AlergenAcronim alergenAcronim;
 
