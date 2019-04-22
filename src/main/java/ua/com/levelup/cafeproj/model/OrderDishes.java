@@ -15,6 +15,8 @@ public class OrderDishes {
     @JoinColumn(name = "dish_id")
     private Dish dish;
 
+    private String nameOfTable;
+
     private int quantity;
 
     @Enumerated(EnumType.STRING)
@@ -50,5 +52,13 @@ public class OrderDishes {
 
     public void setStatusOfMeal(StatusOfDish statusOfMeal) {
         this.statusOfMeal = statusOfMeal;
+    }
+
+    public String getNameOfTable() {
+        return nameOfTable;
+    }
+
+    public void setNameOfTable(String nameOfTable) {
+        this.nameOfTable = nameOfTable;
     }
 }
