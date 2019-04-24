@@ -22,10 +22,10 @@ public class Role {
     private List<User> users;
 
     @ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable(name = "premissions_role",
+    @JoinTable(name = "permissions_role",
                 joinColumns = @JoinColumn (name = "role_id"),
-            inverseJoinColumns = @JoinColumn (name = "premissions_id"))
-    private List<Premissions> premissions = new ArrayList<>();
+            inverseJoinColumns = @JoinColumn (name = "permissions_id"))
+    private List<Permissions> permissions = new ArrayList<>();
 
     public long getId() {
         return id;
@@ -43,12 +43,12 @@ public class Role {
         this.name = name;
     }
 
-    public List<Premissions> getPremissions() {
-        return premissions;
+    public List<Permissions> getPremissions() {
+        return permissions;
     }
 
-    public void setPremissions(List<Premissions> premissions) {
-        this.premissions = premissions;
+    public void setPremissions(List<Permissions> premissions) {
+        this.permissions = premissions;
     }
 
     public List<User> getUsers() {

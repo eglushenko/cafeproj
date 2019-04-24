@@ -1,6 +1,6 @@
 package ua.com.levelup.cafeproj.enums;
 
-public enum Premissions {
+public enum Permissions {
     USER_ADD,
     USER_EDIT,
     USER_DELETE,

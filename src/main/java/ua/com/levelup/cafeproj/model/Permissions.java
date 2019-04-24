@@ -5,21 +5,21 @@ import javax.persistence.Table;
 import java.util.List;
 
 @Entity
-@Table(name = "peremissions")
-public class Premissions {
+@Table(name = "permissions")
+public class Permissions {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     @Enumerated(EnumType.STRING)
-    private ua.com.levelup.cafeproj.enums.Premissions name;
+    private ua.com.levelup.cafeproj.enums.Permissions name;
 
     @Column
     private boolean enabled;
 
     @ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable(name = "premissions_role",
-            joinColumns = @JoinColumn (name = "premissions_id"),
+    @JoinTable(name = "permissions_role",
+            joinColumns = @JoinColumn (name = "permissions_id"),
             inverseJoinColumns = @JoinColumn (name = "role_id"))
     private List<Role> roles;
 
@@ -31,11 +31,11 @@ public class Premissions {
         this.id = id;
     }
 
-    public ua.com.levelup.cafeproj.enums.Premissions getName() {
+    public ua.com.levelup.cafeproj.enums.Permissions getName() {
         return name;
     }
 
-    public void setName(ua.com.levelup.cafeproj.enums.Premissions name) {
+    public void setName(ua.com.levelup.cafeproj.enums.Permissions name) {
         this.name = name;
     }
 

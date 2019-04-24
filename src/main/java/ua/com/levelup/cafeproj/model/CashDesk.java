@@ -39,9 +39,9 @@ public class CashDesk {
     @JoinColumn(name = "personal_id")
     private Personal personal;
 
-    @OneToMany(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "user_id")
-    private Set<User> userOfDestantion;
+    private User userOfDestantion;
 
     public long getId() {
         return id;
@@ -107,11 +107,11 @@ public class CashDesk {
         this.discount = discount;
     }
 
-    public Set<User> getUserOfDestantion() {
+    public User getUserOfDestantion() {
         return userOfDestantion;
     }
 
-    public void setUserOfDestantion(Set<User> userOfDestantion) {
+    public void setUserOfDestantion(User userOfDestantion) {
         this.userOfDestantion = userOfDestantion;
     }
 }

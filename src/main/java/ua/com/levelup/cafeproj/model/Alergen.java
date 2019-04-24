@@ -16,7 +16,7 @@ public class Alergen {
 
     private String name;
 
-    @ManyToMany(mappedBy = "alergens")
+    @ManyToMany(cascade = CascadeType.ALL)
     private List<Ingredient> ingredients = new ArrayList<>();
 
     @Enumerated(EnumType.STRING)
