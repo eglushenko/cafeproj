@@ -27,8 +27,7 @@ public class CashDesk {
     @CreationTimestamp
     private LocalDateTime dateTimeCreation;
 
-    private String destantionDocument;
-
+    
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "disconts_id")
     private Discount discount;
@@ -41,7 +40,7 @@ public class CashDesk {
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "user_id")
-    private User userOfDestantion;
+    private User userOfCollection;
 
     public long getId() {
         return id;
@@ -67,14 +66,7 @@ public class CashDesk {
         this.dateTimeCreation = dateTimeCreation;
     }
 
-    public String getDestantionDocument() {
-        return destantionDocument;
-    }
-
-    public void setDestantionDocument(String destantionDocument) {
-        this.destantionDocument = destantionDocument;
-    }
-
+    
     public double getSum() {
         return sum;
     }
@@ -107,11 +99,11 @@ public class CashDesk {
         this.discount = discount;
     }
 
-    public User getUserOfDestantion() {
-        return userOfDestantion;
+    public User getUserOfCollection() {
+        return userOfCollection;
     }
 
-    public void setUserOfDestantion(User userOfDestantion) {
-        this.userOfDestantion = userOfDestantion;
+    public void setUserOfCollection(User userOfCollection) {
+        this.userOfCollection = userOfCollection;
     }
 }
