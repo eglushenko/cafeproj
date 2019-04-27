@@ -13,7 +13,7 @@ public class BookigOfTables {
     private long id;
 
     @ManyToOne(cascade = CascadeType.ALL)
-
+    @JoinColumn(name = "tables_id")
     private Tables tables;
 
     private boolean reserved = true;

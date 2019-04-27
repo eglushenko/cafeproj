@@ -17,7 +17,7 @@ public class Tables {
 
     private int maxGuests;  // количество мест за столико максимально
 
-    @OneToMany
+    @OneToMany(mappedBy = "tables")
 
     private Set<BookigOfTables> bookigOfTablesSet;
 
