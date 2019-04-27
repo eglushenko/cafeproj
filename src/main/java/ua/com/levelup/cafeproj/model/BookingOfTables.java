@@ -6,7 +6,8 @@ import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "booking_of_tables")
-public class BookigOfTables {
+public class BookingOfTables
+{
     @Id
 
     @GeneratedValue(strategy = GenerationType.IDENTITY)

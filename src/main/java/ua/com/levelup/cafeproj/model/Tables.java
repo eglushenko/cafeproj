@@ -19,7 +19,7 @@ public class Tables {
 
     @OneToMany(mappedBy = "tables")
 
-    private Set<BookigOfTables> bookigOfTablesSet;
+    private Set<BookingOfTables> bookingOfTablesSet;
 
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "orders_tables",
@@ -56,14 +56,14 @@ public class Tables {
         this.maxGuests = maxGuests;
     }
 
-    public Set<BookigOfTables> getBookigOfTablesSet()
+    public Set<BookingOfTables> getBookingOfTablesSet()
     {
-        return bookigOfTablesSet;
+        return bookingOfTablesSet;
     }
 
-    public void setBookigOfTablesSet(Set<BookigOfTables> bookigOfTablesSet)
+    public void setBookingOfTablesSet(Set<BookingOfTables> bookingOfTablesSet)
     {
-        this.bookigOfTablesSet = bookigOfTablesSet;
+        this.bookingOfTablesSet = bookingOfTablesSet;
     }
 
     public Personal getPersonal() {
