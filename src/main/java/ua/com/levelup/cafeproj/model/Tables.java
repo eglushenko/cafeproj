@@ -17,9 +17,9 @@ public class Tables {
 
     private int maxGuests;  // количество мест за столико максимально
 
-    @OneToOne
-    @JoinColumn(name = "booking_id")
-    private BookigOfTables reserved;
+    @OneToMany
+
+    private Set<BookigOfTables> bookigOfTablesSet;
 
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "orders_tables",
@@ -56,12 +56,14 @@ public class Tables {
         this.maxGuests = maxGuests;
     }
 
-    public BookigOfTables getReserved() {
-        return reserved;
+    public Set<BookigOfTables> getBookigOfTablesSet()
+    {
+        return bookigOfTablesSet;
     }
 
-    public void setReserved(BookigOfTables reserved) {
-        this.reserved = reserved;
+    public void setBookigOfTablesSet(Set<BookigOfTables> bookigOfTablesSet)
+    {
+        this.bookigOfTablesSet = bookigOfTablesSet;
     }
 
     public Personal getPersonal() {

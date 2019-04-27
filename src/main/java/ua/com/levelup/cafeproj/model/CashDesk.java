@@ -19,7 +19,7 @@ public class CashDesk {
     @Enumerated(EnumType.STRING)
     private TypeOfDocument typeOfDocument;
 
-    @OneToOne
+    @OneToOne(mappedBy = "cashDesk")
     private Order order;
 
 

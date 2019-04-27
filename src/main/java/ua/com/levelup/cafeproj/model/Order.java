@@ -38,7 +38,7 @@ public class Order {
     @JoinColumn(name = "cash_operations_id")
     private CashDesk cashDesk;
 
-    @OneToOne
+    @OneToOne(mappedBy = "order")
     private Delivery delivery;
 
     @OneToOne(cascade = CascadeType.ALL)

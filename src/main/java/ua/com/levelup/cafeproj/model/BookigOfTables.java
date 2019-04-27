@@ -12,7 +12,8 @@ public class BookigOfTables {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @OneToOne
+    @ManyToOne(cascade = CascadeType.ALL)
+
     private Tables tables;
 
     private boolean reserved = true;
@@ -25,7 +26,7 @@ public class BookigOfTables {
 
     private  String phoneNumberGuest;
 
-    private int quantityGusts;
+    private int quantityOfGuests;
 
     public long getId() {
         return id;
@@ -83,11 +84,11 @@ public class BookigOfTables {
         this.phoneNumberGuest = phoneNumberGuest;
     }
 
-    public int getQuantityGusts() {
-        return quantityGusts;
+    public int getQuantityOfGuests() {
+        return quantityOfGuests;
     }
 
-    public void setQuantityGusts(int quantityGusts) {
-        this.quantityGusts = quantityGusts;
+    public void setQuantityOfGuests(int quantityOfGuests) {
+        this.quantityOfGuests = quantityOfGuests;
     }
 }

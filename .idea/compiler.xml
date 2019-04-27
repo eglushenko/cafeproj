@@ -9,6 +9,7 @@
         <module name="cafeproj" />
         <module name="mvc-cafeprojevg" />
         <module name="spring-mvc-test" />
+        <module name="springmvcexp" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
